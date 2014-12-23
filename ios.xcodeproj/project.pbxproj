@@ -25,6 +25,8 @@
 		8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */; };
 		8C505EEB1A45F32200635F03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C505EEA1A45F32200635F03 /* CoreLocation.framework */; };
 		8CF719A61A48714E00490186 /* GeoStationsIdDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */; };
+		8CF719A91A4938D800490186 /* TrainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719A81A4938D800490186 /* TrainsViewController.m */; };
+		8CF719B01A495F4100490186 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719AF1A495F4100490186 /* Train.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		8C505EEA1A45F32200635F03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoStationsIdDataSource.m; sourceTree = "<group>"; };
 		8CF719A71A48715B00490186 /* GeoStationsIdDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoStationsIdDataSource.h; sourceTree = "<group>"; };
+		8CF719A81A4938D800490186 /* TrainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainsViewController.m; sourceTree = "<group>"; };
+		8CF719AA1A49392500490186 /* TrainsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainsViewController.h; sourceTree = "<group>"; };
+		8CF719AE1A495F4100490186 /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
+		8CF719AF1A495F4100490186 /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,8 @@
 				8C065B141A433DB400ECC347 /* ViewController.h */,
 				8C065B151A433DB400ECC347 /* ViewController.m */,
 				8C065B171A433DB400ECC347 /* Main.storyboard */,
+				8CF719A81A4938D800490186 /* TrainsViewController.m */,
+				8CF719AA1A49392500490186 /* TrainsViewController.h */,
 				8C065B1A1A433DB400ECC347 /* Images.xcassets */,
 				8C065B1C1A433DB400ECC347 /* LaunchScreen.xib */,
 				8C065B111A433DB400ECC347 /* ios.xcdatamodeld */,
@@ -190,6 +198,8 @@
 				8C065B4B1A439F3400ECC347 /* DataFetcher.h */,
 				8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */,
 				8CF719A71A48715B00490186 /* GeoStationsIdDataSource.h */,
+				8CF719AE1A495F4100490186 /* Train.h */,
+				8CF719AF1A495F4100490186 /* Train.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -306,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF719B01A495F4100490186 /* Train.m in Sources */,
 				8CF719A61A48714E00490186 /* GeoStationsIdDataSource.m in Sources */,
 				8C065B461A439C0300ECC347 /* StationsNameIdDataSource.m in Sources */,
 				8C065B131A433DB400ECC347 /* ios.xcdatamodeld in Sources */,
@@ -316,6 +327,7 @@
 				8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */,
 				8C065B0D1A433DB400ECC347 /* main.m in Sources */,
 				8C065B421A43979C00ECC347 /* MLPAutoCompleteTextField.m in Sources */,
+				8CF719A91A4938D800490186 /* TrainsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

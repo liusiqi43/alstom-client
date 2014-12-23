@@ -11,6 +11,7 @@
 #import "StationsNameIdDataSource.h"
 #import "GeoStationsIdDataSource.h"
 #import "MLPAutoCompleteTextField.h"
+#import "TrainsViewController.h"
 #import "AutoCompleteCell.h"
 #import "DataFetcher.h"
 
@@ -34,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
     // Do any additional setup after loading the view, typically from a
     self.namesDataSource = [[StationsNameIdDataSource alloc] init];
     self.geoDataSource = [[GeoStationsIdsDataSource alloc] init];
@@ -116,6 +118,16 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"getNextTrainsSegue"])
+    {
+        TrainsViewController *vc = [segue destinationViewController];
+        vc.departureStationName = [self.textfield_departure text];
+        vc.arrivalStationName = [self.textfield_arrival text];
+    }
+}
+
 - (IBAction)getNextTrains:(id)sender {
     DataFetcher *fetcher = [DataFetcher sharedInstance];
     NSNumber *departureId = [fetcher getIdForStationName:[self.textfield_departure text]];
@@ -131,6 +143,7 @@
     
     if (departureId && arrivalId && departureId != arrivalId) {
         // Segue to trains ViewController
+        [self performSegueWithIdentifier:@"getNextTrainsSegue" sender:self];
     }
 }
 

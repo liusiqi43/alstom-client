@@ -30,6 +30,8 @@
 - (NSDictionary *) getNearestStationNameToId:(CLLocation *)location;
 - (NSNumber *) getIdForStationName:(NSString *)name;
 - (NSNumber *) getIdForNearestStationName:(NSString *)name;
+- (NSArray *) fetchTrainsForDeparture:_departureId
+                              Arrival:_arrivalId;
 
 @end
 

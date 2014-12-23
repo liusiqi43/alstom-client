@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DataFetcher.h"
+#import "Train.h"
 
 @implementation DataFetcher
 
@@ -63,6 +64,17 @@
                                     nil];
     }
     return self.geoStationNamesToId;
+}
+
+// Always fetch new copy, no caching strategy.
+- (NSArray *) fetchTrainsForDeparture:(NSString *)_departureName
+                              Arrival:(NSString *)_arrivalName
+{
+    NSMutableArray *res = [[NSMutableArray alloc] init];
+    for (int i = 0; i<4+arc4random_uniform(3); ++i) {
+        [res addObject:[[Train alloc] initWithRandom]];
+    }
+    return res;
 }
 
 @end
