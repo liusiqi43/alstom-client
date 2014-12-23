@@ -15,6 +15,16 @@
 		8C065B1B1A433DB400ECC347 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C065B1A1A433DB400ECC347 /* Images.xcassets */; };
 		8C065B1E1A433DB400ECC347 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C065B1C1A433DB400ECC347 /* LaunchScreen.xib */; };
 		8C065B2A1A433DB400ECC347 /* iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B291A433DB400ECC347 /* iosTests.m */; };
+		8C065B341A433E2300ECC347 /* trenbala03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8C065B331A433E2300ECC347 /* trenbala03.jpg */; };
+		8C065B371A433E8700ECC347 /* Alstom.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C065B361A433E8700ECC347 /* Alstom.svg.png */; };
+		8C065B391A4345BE00ECC347 /* geolocalisation.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C065B381A4345BE00ECC347 /* geolocalisation.png */; };
+		8C065B421A43979C00ECC347 /* MLPAutoCompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B3C1A43979C00ECC347 /* MLPAutoCompleteTextField.m */; };
+		8C065B431A43979C00ECC347 /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B411A43979C00ECC347 /* NSString+Levenshtein.m */; };
+		8C065B461A439C0300ECC347 /* StationsNameIdDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B451A439C0300ECC347 /* StationsNameIdDataSource.m */; };
+		8C065B4A1A439F1F00ECC347 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B491A439F1F00ECC347 /* DataFetcher.m */; };
+		8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */; };
+		8C505EEB1A45F32200635F03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C505EEA1A45F32200635F03 /* CoreLocation.framework */; };
+		8CF719A61A48714E00490186 /* GeoStationsIdDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +52,25 @@
 		8C065B231A433DB400ECC347 /* iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C065B281A433DB400ECC347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C065B291A433DB400ECC347 /* iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosTests.m; sourceTree = "<group>"; };
+		8C065B331A433E2300ECC347 /* trenbala03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trenbala03.jpg; sourceTree = "<group>"; };
+		8C065B361A433E8700ECC347 /* Alstom.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alstom.svg.png; sourceTree = "<group>"; };
+		8C065B381A4345BE00ECC347 /* geolocalisation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = geolocalisation.png; sourceTree = "<group>"; };
+		8C065B3B1A43979C00ECC347 /* MLPAutoCompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextField.h; sourceTree = "<group>"; };
+		8C065B3C1A43979C00ECC347 /* MLPAutoCompleteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPAutoCompleteTextField.m; sourceTree = "<group>"; };
+		8C065B3D1A43979C00ECC347 /* MLPAutoCompleteTextFieldDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextFieldDataSource.h; sourceTree = "<group>"; };
+		8C065B3E1A43979C00ECC347 /* MLPAutoCompleteTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextFieldDelegate.h; sourceTree = "<group>"; };
+		8C065B3F1A43979C00ECC347 /* MLPAutoCompletionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompletionObject.h; sourceTree = "<group>"; };
+		8C065B401A43979C00ECC347 /* NSString+Levenshtein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Levenshtein.h"; sourceTree = "<group>"; };
+		8C065B411A43979C00ECC347 /* NSString+Levenshtein.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Levenshtein.m"; sourceTree = "<group>"; };
+		8C065B451A439C0300ECC347 /* StationsNameIdDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationsNameIdDataSource.m; sourceTree = "<group>"; };
+		8C065B481A439D9100ECC347 /* StationsNameIdDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StationsNameIdDataSource.h; sourceTree = "<group>"; };
+		8C065B491A439F1F00ECC347 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		8C065B4B1A439F3400ECC347 /* DataFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
+		8C065B4D1A4429E500ECC347 /* AutoCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteCell.h; sourceTree = "<group>"; };
+		8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteCell.m; sourceTree = "<group>"; };
+		8C505EEA1A45F32200635F03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoStationsIdDataSource.m; sourceTree = "<group>"; };
+		8CF719A71A48715B00490186 /* GeoStationsIdDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoStationsIdDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C505EEB1A45F32200635F03 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +95,7 @@
 		8C065AFE1A433DB400ECC347 = {
 			isa = PBXGroup;
 			children = (
+				8C505EEA1A45F32200635F03 /* CoreLocation.framework */,
 				8C065B091A433DB400ECC347 /* ios */,
 				8C065B261A433DB400ECC347 /* iosTests */,
 				8C065B081A433DB400ECC347 /* Products */,
@@ -83,6 +114,9 @@
 		8C065B091A433DB400ECC347 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				8C065B4C1A4429DC00ECC347 /* utility */,
+				8C065B441A439BDD00ECC347 /* models */,
+				8C065B351A433E3400ECC347 /* res */,
 				8C065B0E1A433DB400ECC347 /* AppDelegate.h */,
 				8C065B0F1A433DB400ECC347 /* AppDelegate.m */,
 				8C065B141A433DB400ECC347 /* ViewController.h */,
@@ -99,6 +133,7 @@
 		8C065B0A1A433DB400ECC347 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C065B3A1A43979C00ECC347 /* MLPAutoCompleteTextField */,
 				8C065B0B1A433DB400ECC347 /* Info.plist */,
 				8C065B0C1A433DB400ECC347 /* main.m */,
 			);
@@ -120,6 +155,52 @@
 				8C065B281A433DB400ECC347 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C065B351A433E3400ECC347 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				8C065B381A4345BE00ECC347 /* geolocalisation.png */,
+				8C065B331A433E2300ECC347 /* trenbala03.jpg */,
+				8C065B361A433E8700ECC347 /* Alstom.svg.png */,
+			);
+			name = res;
+			sourceTree = "<group>";
+		};
+		8C065B3A1A43979C00ECC347 /* MLPAutoCompleteTextField */ = {
+			isa = PBXGroup;
+			children = (
+				8C065B3B1A43979C00ECC347 /* MLPAutoCompleteTextField.h */,
+				8C065B3C1A43979C00ECC347 /* MLPAutoCompleteTextField.m */,
+				8C065B3D1A43979C00ECC347 /* MLPAutoCompleteTextFieldDataSource.h */,
+				8C065B3E1A43979C00ECC347 /* MLPAutoCompleteTextFieldDelegate.h */,
+				8C065B3F1A43979C00ECC347 /* MLPAutoCompletionObject.h */,
+				8C065B401A43979C00ECC347 /* NSString+Levenshtein.h */,
+				8C065B411A43979C00ECC347 /* NSString+Levenshtein.m */,
+			);
+			path = MLPAutoCompleteTextField;
+			sourceTree = "<group>";
+		};
+		8C065B441A439BDD00ECC347 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				8C065B451A439C0300ECC347 /* StationsNameIdDataSource.m */,
+				8C065B481A439D9100ECC347 /* StationsNameIdDataSource.h */,
+				8C065B491A439F1F00ECC347 /* DataFetcher.m */,
+				8C065B4B1A439F3400ECC347 /* DataFetcher.h */,
+				8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */,
+				8CF719A71A48715B00490186 /* GeoStationsIdDataSource.h */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		8C065B4C1A4429DC00ECC347 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				8C065B4D1A4429E500ECC347 /* AutoCompleteCell.h */,
+				8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */,
+			);
+			name = utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C065B191A433DB400ECC347 /* Main.storyboard in Resources */,
+				8C065B371A433E8700ECC347 /* Alstom.svg.png in Resources */,
+				8C065B341A433E2300ECC347 /* trenbala03.jpg in Resources */,
+				8C065B391A4345BE00ECC347 /* geolocalisation.png in Resources */,
 				8C065B1E1A433DB400ECC347 /* LaunchScreen.xib in Resources */,
 				8C065B1B1A433DB400ECC347 /* Images.xcassets in Resources */,
 			);
@@ -222,10 +306,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF719A61A48714E00490186 /* GeoStationsIdDataSource.m in Sources */,
+				8C065B461A439C0300ECC347 /* StationsNameIdDataSource.m in Sources */,
 				8C065B131A433DB400ECC347 /* ios.xcdatamodeld in Sources */,
 				8C065B101A433DB400ECC347 /* AppDelegate.m in Sources */,
+				8C065B4A1A439F1F00ECC347 /* DataFetcher.m in Sources */,
 				8C065B161A433DB400ECC347 /* ViewController.m in Sources */,
+				8C065B431A43979C00ECC347 /* NSString+Levenshtein.m in Sources */,
+				8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */,
 				8C065B0D1A433DB400ECC347 /* main.m in Sources */,
+				8C065B421A43979C00ECC347 /* MLPAutoCompleteTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +440,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -360,6 +451,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -416,6 +508,7 @@
 				8C065B2F1A433DB400ECC347 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C065B301A433DB400ECC347 /* Build configuration list for PBXNativeTarget "iosTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +517,7 @@
 				8C065B321A433DB400ECC347 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
