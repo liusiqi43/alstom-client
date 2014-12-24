@@ -14,13 +14,15 @@
 - (Train *) initWithRandom
 {
     self = [self init];
-    
-    self.avgDensity = [NSNumber numberWithDouble:arc4random_uniform(100)/100];
+    self.wagonDensities = [[NSMutableArray alloc] init];
     self.arrivalTime = [NSNumber numberWithInt:arc4random_uniform(10)];
+    double sum = 0;
     for (int i=0; i<4+arc4random_uniform(4); ++i) {
-        [self.wagonDensities addObject:[NSNumber numberWithDouble:arc4random_uniform(100)/100]];
+        double n = arc4random_uniform(100)/100.0f;
+        sum += n;
+        [self.wagonDensities addObject:[NSNumber numberWithFloat:n]];
     }
-    
+    self.avgDensity = [NSNumber numberWithFloat:sum/[self.wagonDensities count]];
     return self;
 }
 

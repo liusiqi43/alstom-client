@@ -27,6 +27,7 @@
 		8CF719A61A48714E00490186 /* GeoStationsIdDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */; };
 		8CF719A91A4938D800490186 /* TrainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719A81A4938D800490186 /* TrainsViewController.m */; };
 		8CF719B01A495F4100490186 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719AF1A495F4100490186 /* Train.m */; };
+		8CF719B31A49E49800490186 /* UICollectionedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719B21A49E49800490186 /* UICollectionedTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		8CF719AA1A49392500490186 /* TrainsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainsViewController.h; sourceTree = "<group>"; };
 		8CF719AE1A495F4100490186 /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
 		8CF719AF1A495F4100490186 /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
+		8CF719B11A49E49800490186 /* UICollectionedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionedTableViewCell.h; sourceTree = "<group>"; };
+		8CF719B21A49E49800490186 /* UICollectionedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionedTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 			children = (
 				8C065B4D1A4429E500ECC347 /* AutoCompleteCell.h */,
 				8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */,
+				8CF719B11A49E49800490186 /* UICollectionedTableViewCell.h */,
+				8CF719B21A49E49800490186 /* UICollectionedTableViewCell.m */,
 			);
 			name = utility;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				8C065B431A43979C00ECC347 /* NSString+Levenshtein.m in Sources */,
 				8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */,
 				8C065B0D1A433DB400ECC347 /* main.m in Sources */,
+				8CF719B31A49E49800490186 /* UICollectionedTableViewCell.m in Sources */,
 				8C065B421A43979C00ECC347 /* MLPAutoCompleteTextField.m in Sources */,
 				8CF719A91A4938D800490186 /* TrainsViewController.m in Sources */,
 			);

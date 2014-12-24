@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TrainsViewController.h"
+#import "UICollectionedTableViewCell.h"
 #import "DataFetcher.h"
 #import "Train.h"
 
@@ -73,9 +74,19 @@
         }
         return cell;
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"trainInfo" forIndexPath:indexPath];
-    return cell;
+    UICollectionedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"trainInfo" forIndexPath:indexPath];
+    [cell setTrain:[self.trains objectAtIndex:indexPath.row]];
     
+    NSString *attente = nil;
+    if ([cell.train.arrivalTime intValue] < 1) {
+        attente = @"À l'approche";
+    } else {
+        attente = [NSString stringWithFormat:@"Attente: %@ min", cell.train.arrivalTime];
+    }
+
+    [((UILabel *) [cell viewWithTag:6]) setText: attente];
+    [((UIProgressView *) [cell viewWithTag:5]) setProgress:[cell.train.avgDensity floatValue] animated:YES];
+    return cell;
 }
 
 
