@@ -57,7 +57,7 @@
 #define A(x) ( Mask8(x >> 24) )
 #define RGBAMake(r, g, b, a) ( Mask8(r) | Mask8(g) << 8 | Mask8(b) << 16 | Mask8(a) << 24 )
     
-    for (NSUInteger j = height * [density floatValue]; j < height; j++) {
+    for (NSUInteger j = height * (1-[density floatValue]); j < height; j++) {
         for (NSUInteger i = 0; i < width; i++) {
             if (A(pixels[width*j+i]) != 0) {
                 pixels[width*j+i] = RGBAMake(255, 0, 0, A(pixels[width*j+i]));
@@ -71,7 +71,7 @@
                                              8,
                                              CGImageGetBytesPerRow(inputCGImage),
                                              CGImageGetColorSpace(inputCGImage),
-                                             kCGImageAlphaPremultipliedLast);
+                                             kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);
     
     CGImageRef newCGImage = CGBitmapContextCreateImage(ctx);
     UIImage * processedImage = [UIImage imageWithCGImage:newCGImage];
@@ -92,8 +92,9 @@
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     
     UIImage *wagon = [UIImage imageNamed:@"geolocalisation.png"];
+    NSLog(@"density");
     [imageView setImage:[self portionPaintForDensity:[self.train.wagonDensities objectAtIndex:indexPath.row] onImage:wagon]];
-    
+    NSLog(@"density done");    
     return cell;
 }
 

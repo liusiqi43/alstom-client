@@ -71,7 +71,7 @@
                               Arrival:(NSString *)_arrivalName
 {
     NSMutableArray *res = [[NSMutableArray alloc] init];
-    for (int i = 0; i<4+arc4random_uniform(3); ++i) {
+    for (int i = 0; i<10+arc4random_uniform(8); ++i) {
         [res addObject:[[Train alloc] initWithRandom]];
     }
     return res;
