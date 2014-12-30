@@ -86,7 +86,6 @@
     }
 
     [((UILabel *) [cell viewWithTag:6]) setText: attente];
-//    [((UILabel *) [cell viewWithTag:7]) setText: [[cell.train.wagonDensities valueForKey:@"description"] componentsJoinedByString:@","]];
     [((UIProgressView *) [cell viewWithTag:5]) setProgress:[cell.train.avgDensity floatValue] animated:YES];
     [cell.collectionView reloadData];
     return cell;

@@ -90,11 +90,15 @@
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"trainImageCollectionCell" forIndexPath:indexPath];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+    UIImage *wagon = nil;
     
-    UIImage *wagon = [UIImage imageNamed:@"geolocalisation.png"];
-    NSLog(@"density");
+    if (indexPath.row == 0) {
+        wagon = [UIImage imageNamed:@"avant-small.png"];
+    } else {
+        wagon = [UIImage imageNamed:@"wagon-small.png"];
+    }
+    
     [imageView setImage:[self portionPaintForDensity:[self.train.wagonDensities objectAtIndex:indexPath.row] onImage:wagon]];
-    NSLog(@"density done");    
     return cell;
 }
 
