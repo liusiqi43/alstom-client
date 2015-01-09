@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSMutableArray *wagonDensities;
 
 - (Train *) initWithRandom;
+- (NSComparisonResult)compareArrivalTime:(Train *)other;
 
 @end

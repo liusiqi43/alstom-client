@@ -74,7 +74,8 @@
     for (int i = 0; i<10+arc4random_uniform(8); ++i) {
         [res addObject:[[Train alloc] initWithRandom]];
     }
-    return res;
+    
+    return [res sortedArrayUsingSelector:@selector(compareArrivalTime:)];
 }
 
 @end

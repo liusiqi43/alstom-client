@@ -13,7 +13,6 @@
 - (UICollectionedTableViewCell *)init
 {
     self = [super init];
-    ((UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout).minimumLineSpacing = 1000.0f;
     return self;
 }
 
@@ -88,17 +87,23 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+//    unsigned long index = [self.train.wagonDensities count] - indexPath.row - 1;
+    unsigned long index = indexPath.row;
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"trainImageCollectionCell" forIndexPath:indexPath];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
     UIImage *wagon = nil;
     
-    if (indexPath.row == 0) {
+    if (index == 0) {
         wagon = [UIImage imageNamed:@"avant-small.png"];
     } else {
         wagon = [UIImage imageNamed:@"wagon-small.png"];
     }
     
-    [imageView setImage:[self portionPaintForDensity:[self.train.wagonDensities objectAtIndex:indexPath.row] onImage:wagon]];
+    [imageView setImage:[self portionPaintForDensity:[self.train.wagonDensities objectAtIndex:index] onImage:wagon]];
+    
+    // Trains heading right
+    [collectionView setTransform:CGAffineTransformMakeScale(-1, 1)];
+    
     return cell;
 }
 

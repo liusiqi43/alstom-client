@@ -24,6 +24,7 @@
 		8C065B4A1A439F1F00ECC347 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B491A439F1F00ECC347 /* DataFetcher.m */; };
 		8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */; };
 		8C505EEB1A45F32200635F03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C505EEA1A45F32200635F03 /* CoreLocation.framework */; };
+		8C6D99281A5F3F4F0032828F /* AMGProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D99271A5F3F4F0032828F /* AMGProgressView.m */; };
 		8CF6A6DC1A52F27700E425FF /* wagon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6A6DB1A52F27700E425FF /* wagon-small.png */; };
 		8CF6A6DE1A52F28E00E425FF /* avant-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6A6DD1A52F28E00E425FF /* avant-small.png */; };
 		8CF719A61A48714E00490186 /* GeoStationsIdDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */; };
@@ -74,6 +75,8 @@
 		8C065B4D1A4429E500ECC347 /* AutoCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteCell.h; sourceTree = "<group>"; };
 		8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteCell.m; sourceTree = "<group>"; };
 		8C505EEA1A45F32200635F03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8C6D99261A5F3F4F0032828F /* AMGProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMGProgressView.h; sourceTree = "<group>"; };
+		8C6D99271A5F3F4F0032828F /* AMGProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMGProgressView.m; sourceTree = "<group>"; };
 		8CF6A6DB1A52F27700E425FF /* wagon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wagon-small.png"; sourceTree = "<group>"; };
 		8CF6A6DD1A52F28E00E425FF /* avant-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avant-small.png"; sourceTree = "<group>"; };
 		8CF719A51A48714E00490186 /* GeoStationsIdDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoStationsIdDataSource.m; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 		8C065B4C1A4429DC00ECC347 /* utility */ = {
 			isa = PBXGroup;
 			children = (
+				8C6D99261A5F3F4F0032828F /* AMGProgressView.h */,
+				8C6D99271A5F3F4F0032828F /* AMGProgressView.m */,
 				8C065B4D1A4429E500ECC347 /* AutoCompleteCell.h */,
 				8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */,
 				8CF719B11A49E49800490186 /* UICollectionedTableViewCell.h */,
@@ -332,6 +337,7 @@
 				8CF719B01A495F4100490186 /* Train.m in Sources */,
 				8CF719A61A48714E00490186 /* GeoStationsIdDataSource.m in Sources */,
 				8C065B461A439C0300ECC347 /* StationsNameIdDataSource.m in Sources */,
+				8C6D99281A5F3F4F0032828F /* AMGProgressView.m in Sources */,
 				8C065B131A433DB400ECC347 /* ios.xcdatamodeld in Sources */,
 				8C065B101A433DB400ECC347 /* AppDelegate.m in Sources */,
 				8C065B4A1A439F1F00ECC347 /* DataFetcher.m in Sources */,

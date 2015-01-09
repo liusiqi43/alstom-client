@@ -11,6 +11,7 @@
 #import "UICollectionedTableViewCell.h"
 #import "DataFetcher.h"
 #import "Train.h"
+#import "AMGProgressView.h"
 
 @interface TrainsViewController ()
 
@@ -86,7 +87,8 @@
     }
 
     [((UILabel *) [cell viewWithTag:6]) setText: attente];
-    [((UIProgressView *) [cell viewWithTag:5]) setProgress:[cell.train.avgDensity floatValue] animated:YES];
+    ((AMGProgressView *) [cell viewWithTag:5]).gradientColors = @[[UIColor blueColor], [UIColor redColor]];
+    ((AMGProgressView *) [cell viewWithTag:5]).progress = [cell.train.avgDensity floatValue];
     [cell.collectionView reloadData];
     return cell;
 }
