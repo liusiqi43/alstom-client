@@ -23,6 +23,7 @@
 		8C065B461A439C0300ECC347 /* StationsNameIdDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B451A439C0300ECC347 /* StationsNameIdDataSource.m */; };
 		8C065B4A1A439F1F00ECC347 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B491A439F1F00ECC347 /* DataFetcher.m */; };
 		8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */; };
+		8C3BA5051A75788900FAE074 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3BA5041A75788900FAE074 /* OrderedDictionary.m */; };
 		8C505EEB1A45F32200635F03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C505EEA1A45F32200635F03 /* CoreLocation.framework */; };
 		8C6D99281A5F3F4F0032828F /* AMGProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6D99271A5F3F4F0032828F /* AMGProgressView.m */; };
 		8CF6A6DC1A52F27700E425FF /* wagon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF6A6DB1A52F27700E425FF /* wagon-small.png */; };
@@ -74,6 +75,8 @@
 		8C065B4B1A439F3400ECC347 /* DataFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		8C065B4D1A4429E500ECC347 /* AutoCompleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCompleteCell.h; sourceTree = "<group>"; };
 		8C065B4E1A4429E500ECC347 /* AutoCompleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCompleteCell.m; sourceTree = "<group>"; };
+		8C3BA5031A75788900FAE074 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		8C3BA5041A75788900FAE074 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		8C505EEA1A45F32200635F03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8C6D99261A5F3F4F0032828F /* AMGProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMGProgressView.h; sourceTree = "<group>"; };
 		8C6D99271A5F3F4F0032828F /* AMGProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMGProgressView.m; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 		8C065B4C1A4429DC00ECC347 /* utility */ = {
 			isa = PBXGroup;
 			children = (
+				8C3BA5031A75788900FAE074 /* OrderedDictionary.h */,
+				8C3BA5041A75788900FAE074 /* OrderedDictionary.m */,
 				8C6D99261A5F3F4F0032828F /* AMGProgressView.h */,
 				8C6D99271A5F3F4F0032828F /* AMGProgressView.m */,
 				8C065B4D1A4429E500ECC347 /* AutoCompleteCell.h */,
@@ -343,6 +348,7 @@
 				8C065B4A1A439F1F00ECC347 /* DataFetcher.m in Sources */,
 				8C065B161A433DB400ECC347 /* ViewController.m in Sources */,
 				8C065B431A43979C00ECC347 /* NSString+Levenshtein.m in Sources */,
+				8C3BA5051A75788900FAE074 /* OrderedDictionary.m in Sources */,
 				8C065B4F1A4429E500ECC347 /* AutoCompleteCell.m in Sources */,
 				8C065B0D1A433DB400ECC347 /* main.m in Sources */,
 				8CF719B31A49E49800490186 /* UICollectionedTableViewCell.m in Sources */,

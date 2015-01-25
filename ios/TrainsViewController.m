@@ -28,8 +28,21 @@
     [self.navigationController setNavigationBarHidden:NO];
     // Fetching trains here.
     NSLog(@"D: %@, A: %@", _departureStationName, _arrivalStationName);
-    _trains = [[DataFetcher sharedInstance] fetchTrainsForDeparture:_departureStationName
-                                                            Arrival:_arrivalStationName];
+    _departureStationId = [[DataFetcher sharedInstance] getIdForStationName:_departureStationName];
+    _arrivalStationId = [[DataFetcher sharedInstance] getIdForStationName:_arrivalStationName];
+    _trains = [[DataFetcher sharedInstance] fetchTrainsForDeparture:_departureStationId
+                                                            Arrival:_arrivalStationId];
+    [NSTimer scheduledTimerWithTimeInterval:10.0
+                                     target:self
+                                   selector:@selector(refreshTable)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+- (void)refreshTable {
+    _trains = [[DataFetcher sharedInstance] fetchTrainsForDeparture:_departureStationId
+                                                            Arrival:_arrivalStationId];
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -66,7 +79,8 @@
                 break;
             }
             case 2: {
-                [detail setText:_arrivalStationName];
+                [detail setText:_arrivalStationName
+                 ];
                 [title setText:@"Arrivée"];
                 break;
             }
@@ -76,14 +90,12 @@
         return cell;
     }
     UICollectionedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"trainInfo" forIndexPath:indexPath];
-    NSLog(@"setTrain");
     [cell setTrain:[self.trains objectAtIndex:indexPath.row]];
-    NSLog(@"setTrain done");   
     NSString *attente = nil;
-    if ([cell.train.arrivalTime intValue] < 1) {
+    if ([cell.train.waitTime intValue] < 1) {
         attente = @"À l'approche";
     } else {
-        attente = [NSString stringWithFormat:@"Attente: %@ min", cell.train.arrivalTime];
+        attente = [NSString stringWithFormat:@"Attente: %@ min", cell.train.waitTime];
     }
 
     [((UILabel *) [cell viewWithTag:6]) setText: attente];

@@ -28,7 +28,6 @@
 - (UIImage *)portionPaintForDensity:(NSNumber *)density
                             onImage:(UIImage *)image
 {
-    NSLog(@"painting portion %@", density);
     // 1. Get pixels of image
     CGImageRef inputCGImage = [image CGImage];
     NSUInteger width = CGImageGetWidth(inputCGImage);

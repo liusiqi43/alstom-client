@@ -36,7 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-    // Do any additional setup after loading the view, typically from a
     self.namesDataSource = [[StationsNameIdDataSource alloc] init];
     self.geoDataSource = [[GeoStationsIdsDataSource alloc] init];
     [self.textfield_arrival setAutoCompleteDataSource: self.namesDataSource];

@@ -15,7 +15,7 @@
 @interface GeoStationsIdsDataSource : NSObject <MLPAutoCompleteTextFieldDataSource>
 
 @property (nonatomic, weak) NSDictionary *geoStationNameToId;
-@property (nonatomic, weak) CLLocation *currentLocation;
+@property (nonatomic, strong) CLLocation *currentLocation;
 
 - (GeoStationsIdsDataSource *) initWithLocation:(CLLocation *)location;
 

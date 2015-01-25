@@ -11,12 +11,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "OrderedDictionary.h"
 
 @interface DataFetcher : NSObject
 
-@property (nonatomic, strong) NSDictionary *stationNamesToId;
-@property (nonatomic, strong) NSDictionary *geoStationNamesToId;
+@property (nonatomic, strong) OrderedDictionary *stationNamesToId;
+@property (nonatomic, strong) OrderedDictionary *geoStationNamesToId;
 
 +(instancetype) sharedInstance;
 
@@ -30,8 +30,8 @@
 - (NSDictionary *) getNearestStationNameToId:(CLLocation *)location;
 - (NSNumber *) getIdForStationName:(NSString *)name;
 - (NSNumber *) getIdForNearestStationName:(NSString *)name;
-- (NSArray *) fetchTrainsForDeparture:_departureId
-                              Arrival:_arrivalId;
+- (NSArray *) fetchTrainsForDeparture:(NSNumber *)_departureId
+                              Arrival:(NSNumber *)_arrivalId;
 
 @end
 

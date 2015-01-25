@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) NSString *departureStationName;
 @property (strong, nonatomic) NSString *arrivalStationName;
+@property (strong, nonatomic) NSNumber *departureStationId;
+@property (strong, nonatomic) NSNumber *arrivalStationId;
 
 @end
 
