@@ -18,6 +18,8 @@
 @property (nonatomic, strong) OrderedDictionary *stationNamesToId;
 @property (nonatomic, strong) OrderedDictionary *geoStationNamesToId;
 
+FOUNDATION_EXPORT NSString *const HOST_URL;
+
 +(instancetype) sharedInstance;
 
 // clue for improper use (produces compile time error)

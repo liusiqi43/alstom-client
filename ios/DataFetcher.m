@@ -12,6 +12,8 @@
 
 @implementation DataFetcher
 
+NSString *const HOST_URL = @"http://192.168.0.100:3000/";
+
 +(instancetype) sharedInstance {
     static dispatch_once_t pred;
     static id shared = nil;
@@ -29,7 +31,7 @@
 - (NSDictionary *) getStationNameToId
 {
     if (!self.stationNamesToId) {
-        NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/stations/"]];
+        NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"%@%@", HOST_URL, @"stations/"]]];
         NSLog(@"Request %@", req.URL);
         NSURLResponse *res = nil;
         NSError *err = nil;
@@ -72,7 +74,12 @@
 - (NSDictionary *) getNearestStationNameToId:(CLLocation *)location
 {
     if (!self.geoStationNamesToId) {
-        NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/stations/@%.2f,%.2f/", location.coordinate.latitude, location.coordinate.longitude]]];
+        NSURLRequest *req = [NSURLRequest requestWithURL:
+                             [NSURL URLWithString:
+                              [NSString stringWithFormat:@"%@stations/@%.2f,%.2f/",
+                               HOST_URL,
+                               location.coordinate.latitude,
+                               location.coordinate.longitude]]];
         NSLog(@"%@", req.URL);
         NSURLResponse *res = nil;
         NSError *err = nil;
@@ -106,7 +113,7 @@
 {
     NSLog(@"%@ --> %@", _departureId, _arrivalId);
     
-    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/trains/%d/%d/", [_departureId intValue], [_arrivalId intValue]]]];
+    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@trains/%d/%d/", HOST_URL, [_departureId intValue], [_arrivalId intValue]]]];
     NSLog(@"%@", req.URL);
     NSURLResponse *res = nil;
     NSError *err = nil;
