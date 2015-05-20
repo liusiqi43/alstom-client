@@ -12,7 +12,7 @@
 
 @implementation DataFetcher
 
-NSString *const HOST_URL = @"http://192.168.0.100:3000/";
+NSString *const HOST_URL = @"http://169.254.91.226:3000/";
 
 +(instancetype) sharedInstance {
     static dispatch_once_t pred;
@@ -65,6 +65,7 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
 - (NSString *) distanceFormat:(NSString *)distance {
     float dist = [distance floatValue];
     if (dist > 1000) {
+        dist /= 1000;
         return [NSString stringWithFormat:@"%.1fkm", dist];
     } else {
         return [NSString stringWithFormat:@"%.1fm", dist];
@@ -94,7 +95,7 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
         NSMutableArray *stationNames = [[NSMutableArray alloc] init];
         NSMutableArray *stationIds = [[NSMutableArray alloc] init];
         
-        for (NSDictionary *item in parsedObject) {
+        for (NSDictionary *item in parsedObject[0]) {
             NSString *entry = [NSString stringWithFormat:@"%@\t%@",
                                [item objectForKey:@"name"],
                                [self distanceFormat:[item objectForKey:@"distance"]]];
