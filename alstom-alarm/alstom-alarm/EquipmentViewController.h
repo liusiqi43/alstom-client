@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SecondViewController.h
 //  alstom-alarm
 //
 //  Created by Siqi Liu on 5/20/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface EquipmentViewController : UIViewController
 
 
 @end

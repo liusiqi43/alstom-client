@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		579261551B0CDCFC001910D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261541B0CDCFC001910D7 /* main.m */; };
 		579261581B0CDCFC001910D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261571B0CDCFC001910D7 /* AppDelegate.m */; };
-		5792615B1B0CDCFC001910D7 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792615A1B0CDCFC001910D7 /* FirstViewController.m */; };
-		5792615E1B0CDCFC001910D7 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792615D1B0CDCFC001910D7 /* SecondViewController.m */; };
+		5792615E1B0CDCFC001910D7 /* EquipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792615D1B0CDCFC001910D7 /* EquipmentViewController.m */; };
 		579261611B0CDCFC001910D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5792615F1B0CDCFC001910D7 /* Main.storyboard */; };
-		579261631B0CDCFC001910D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579261621B0CDCFC001910D7 /* Images.xcassets */; };
 		579261661B0CDCFC001910D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579261641B0CDCFC001910D7 /* LaunchScreen.xib */; };
 		579261721B0CDCFC001910D7 /* alstom_alarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261711B0CDCFC001910D7 /* alstom_alarmTests.m */; };
+		5792617C1B0D3FFB001910D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5792617B1B0D3FFB001910D7 /* Images.xcassets */; };
+		579261831B0D43FC001910D7 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261821B0D43FC001910D7 /* DataFetcher.m */; };
+		579261861B0D443B001910D7 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261851B0D443B001910D7 /* Train.m */; };
+		579261891B0D49EC001910D7 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261881B0D49EC001910D7 /* Alarm.m */; };
+		5792618C1B0D567F001910D7 /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792618B1B0D567F001910D7 /* TrainTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +36,22 @@
 		579261541B0CDCFC001910D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		579261561B0CDCFC001910D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		579261571B0CDCFC001910D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		579261591B0CDCFC001910D7 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		5792615A1B0CDCFC001910D7 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		5792615C1B0CDCFC001910D7 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		5792615D1B0CDCFC001910D7 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		5792615C1B0CDCFC001910D7 /* EquipmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EquipmentViewController.h; sourceTree = "<group>"; };
+		5792615D1B0CDCFC001910D7 /* EquipmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EquipmentViewController.m; sourceTree = "<group>"; };
 		579261601B0CDCFC001910D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		579261621B0CDCFC001910D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		579261651B0CDCFC001910D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5792616B1B0CDCFC001910D7 /* alstom-alarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alstom-alarmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		579261701B0CDCFC001910D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		579261711B0CDCFC001910D7 /* alstom_alarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alstom_alarmTests.m; sourceTree = "<group>"; };
+		5792617B1B0D3FFB001910D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		579261811B0D43FC001910D7 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
+		579261821B0D43FC001910D7 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
+		579261841B0D443B001910D7 /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
+		579261851B0D443B001910D7 /* Train.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Train.m; sourceTree = "<group>"; };
+		579261871B0D49EC001910D7 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		579261881B0D49EC001910D7 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		5792618A1B0D567F001910D7 /* TrainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTableViewController.h; sourceTree = "<group>"; };
+		5792618B1B0D567F001910D7 /* TrainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,15 +93,16 @@
 		579261511B0CDCFC001910D7 /* alstom-alarm */ = {
 			isa = PBXGroup;
 			children = (
+				5792617D1B0D43B7001910D7 /* Utils */,
 				579261561B0CDCFC001910D7 /* AppDelegate.h */,
 				579261571B0CDCFC001910D7 /* AppDelegate.m */,
-				579261591B0CDCFC001910D7 /* FirstViewController.h */,
-				5792615A1B0CDCFC001910D7 /* FirstViewController.m */,
-				5792615C1B0CDCFC001910D7 /* SecondViewController.h */,
-				5792615D1B0CDCFC001910D7 /* SecondViewController.m */,
+				5792618A1B0D567F001910D7 /* TrainTableViewController.h */,
+				5792618B1B0D567F001910D7 /* TrainTableViewController.m */,
+				5792615C1B0CDCFC001910D7 /* EquipmentViewController.h */,
+				5792615D1B0CDCFC001910D7 /* EquipmentViewController.m */,
 				5792615F1B0CDCFC001910D7 /* Main.storyboard */,
-				579261621B0CDCFC001910D7 /* Images.xcassets */,
 				579261641B0CDCFC001910D7 /* LaunchScreen.xib */,
+				5792617B1B0D3FFB001910D7 /* Images.xcassets */,
 				579261521B0CDCFC001910D7 /* Supporting Files */,
 			);
 			path = "alstom-alarm";
@@ -122,6 +132,19 @@
 				579261701B0CDCFC001910D7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5792617D1B0D43B7001910D7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				579261841B0D443B001910D7 /* Train.h */,
+				579261851B0D443B001910D7 /* Train.m */,
+				579261811B0D43FC001910D7 /* DataFetcher.h */,
+				579261821B0D43FC001910D7 /* DataFetcher.m */,
+				579261871B0D49EC001910D7 /* Alarm.h */,
+				579261881B0D49EC001910D7 /* Alarm.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +227,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5792617C1B0D3FFB001910D7 /* Images.xcassets in Resources */,
 				579261611B0CDCFC001910D7 /* Main.storyboard in Resources */,
 				579261661B0CDCFC001910D7 /* LaunchScreen.xib in Resources */,
-				579261631B0CDCFC001910D7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5792615E1B0CDCFC001910D7 /* SecondViewController.m in Sources */,
+				579261861B0D443B001910D7 /* Train.m in Sources */,
+				579261891B0D49EC001910D7 /* Alarm.m in Sources */,
+				5792615E1B0CDCFC001910D7 /* EquipmentViewController.m in Sources */,
 				579261581B0CDCFC001910D7 /* AppDelegate.m in Sources */,
-				5792615B1B0CDCFC001910D7 /* FirstViewController.m in Sources */,
+				579261831B0D43FC001910D7 /* DataFetcher.m in Sources */,
+				5792618C1B0D567F001910D7 /* TrainTableViewController.m in Sources */,
 				579261551B0CDCFC001910D7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "alstom-alarm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -366,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "alstom-alarm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -424,6 +452,7 @@
 				579261771B0CDCFC001910D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		579261781B0CDCFC001910D7 /* Build configuration list for PBXNativeTarget "alstom-alarmTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +461,7 @@
 				5792617A1B0CDCFC001910D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
