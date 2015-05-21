@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Entity.h"
 
-@interface Train : NSObject
+@interface Train : NSObject <Entity>
 
 @property (nonatomic, strong) NSString *mStation;
 @property (nonatomic, strong) NSString *mDirection;

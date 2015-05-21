@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		579261551B0CDCFC001910D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261541B0CDCFC001910D7 /* main.m */; };
 		579261581B0CDCFC001910D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261571B0CDCFC001910D7 /* AppDelegate.m */; };
-		5792615E1B0CDCFC001910D7 /* EquipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792615D1B0CDCFC001910D7 /* EquipmentViewController.m */; };
 		579261611B0CDCFC001910D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5792615F1B0CDCFC001910D7 /* Main.storyboard */; };
 		579261661B0CDCFC001910D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579261641B0CDCFC001910D7 /* LaunchScreen.xib */; };
 		579261721B0CDCFC001910D7 /* alstom_alarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261711B0CDCFC001910D7 /* alstom_alarmTests.m */; };
@@ -18,6 +17,9 @@
 		579261861B0D443B001910D7 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261851B0D443B001910D7 /* Train.m */; };
 		579261891B0D49EC001910D7 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261881B0D49EC001910D7 /* Alarm.m */; };
 		5792618C1B0D567F001910D7 /* TrainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792618B1B0D567F001910D7 /* TrainTableViewController.m */; };
+		5792618F1B0E795A001910D7 /* AlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792618E1B0E795A001910D7 /* AlarmTableViewController.m */; };
+		579261921B0E7C64001910D7 /* EntityDescViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261911B0E7C64001910D7 /* EntityDescViewController.m */; };
+		579261951B0E7C88001910D7 /* EntityContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261941B0E7C88001910D7 /* EntityContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,6 @@
 		579261541B0CDCFC001910D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		579261561B0CDCFC001910D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		579261571B0CDCFC001910D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5792615C1B0CDCFC001910D7 /* EquipmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EquipmentViewController.h; sourceTree = "<group>"; };
-		5792615D1B0CDCFC001910D7 /* EquipmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EquipmentViewController.m; sourceTree = "<group>"; };
 		579261601B0CDCFC001910D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		579261651B0CDCFC001910D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5792616B1B0CDCFC001910D7 /* alstom-alarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alstom-alarmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +52,13 @@
 		579261881B0D49EC001910D7 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		5792618A1B0D567F001910D7 /* TrainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainTableViewController.h; sourceTree = "<group>"; };
 		5792618B1B0D567F001910D7 /* TrainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainTableViewController.m; sourceTree = "<group>"; };
+		5792618D1B0E795A001910D7 /* AlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewController.h; sourceTree = "<group>"; };
+		5792618E1B0E795A001910D7 /* AlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewController.m; sourceTree = "<group>"; };
+		579261901B0E7C64001910D7 /* EntityDescViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityDescViewController.h; sourceTree = "<group>"; };
+		579261911B0E7C64001910D7 /* EntityDescViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityDescViewController.m; sourceTree = "<group>"; };
+		579261931B0E7C88001910D7 /* EntityContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityContainerViewController.h; sourceTree = "<group>"; };
+		579261941B0E7C88001910D7 /* EntityContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityContainerViewController.m; sourceTree = "<group>"; };
+		579261961B0E7D64001910D7 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +105,12 @@
 				579261571B0CDCFC001910D7 /* AppDelegate.m */,
 				5792618A1B0D567F001910D7 /* TrainTableViewController.h */,
 				5792618B1B0D567F001910D7 /* TrainTableViewController.m */,
-				5792615C1B0CDCFC001910D7 /* EquipmentViewController.h */,
-				5792615D1B0CDCFC001910D7 /* EquipmentViewController.m */,
+				579261931B0E7C88001910D7 /* EntityContainerViewController.h */,
+				579261941B0E7C88001910D7 /* EntityContainerViewController.m */,
+				579261901B0E7C64001910D7 /* EntityDescViewController.h */,
+				579261911B0E7C64001910D7 /* EntityDescViewController.m */,
+				5792618D1B0E795A001910D7 /* AlarmTableViewController.h */,
+				5792618E1B0E795A001910D7 /* AlarmTableViewController.m */,
 				5792615F1B0CDCFC001910D7 /* Main.storyboard */,
 				579261641B0CDCFC001910D7 /* LaunchScreen.xib */,
 				5792617B1B0D3FFB001910D7 /* Images.xcassets */,
@@ -143,6 +154,7 @@
 				579261821B0D43FC001910D7 /* DataFetcher.m */,
 				579261871B0D49EC001910D7 /* Alarm.h */,
 				579261881B0D49EC001910D7 /* Alarm.m */,
+				579261961B0E7D64001910D7 /* Entity.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -248,8 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				579261861B0D443B001910D7 /* Train.m in Sources */,
+				579261951B0E7C88001910D7 /* EntityContainerViewController.m in Sources */,
+				5792618F1B0E795A001910D7 /* AlarmTableViewController.m in Sources */,
+				579261921B0E7C64001910D7 /* EntityDescViewController.m in Sources */,
 				579261891B0D49EC001910D7 /* Alarm.m in Sources */,
-				5792615E1B0CDCFC001910D7 /* EquipmentViewController.m in Sources */,
 				579261581B0CDCFC001910D7 /* AppDelegate.m in Sources */,
 				579261831B0D43FC001910D7 /* DataFetcher.m in Sources */,
 				5792618C1B0D567F001910D7 /* TrainTableViewController.m in Sources */,

@@ -85,4 +85,29 @@
     return self_max_level > -1 ? [[Alarm ALARM_LEVELS] objectAtIndex:self_max_level] : nil;
 }
 
+- (NSString *)getTitle
+{
+    return [NSString stringWithFormat:@"Train #%@", self.mId];
+}
+
+- (NSString *)getDesc1
+{
+    return [NSString stringWithFormat:@"Station : %@", self.mStation];
+}
+
+- (NSString *)getDesc2
+{
+    return [NSString stringWithFormat:@"Direction : %@", self.mDirection];
+}
+
+- (NSString *)getDesc3
+{
+    return @"";
+}
+
+- (NSArray *)getAlarms
+{
+    return self.mAlarms;
+}
+
 @end
