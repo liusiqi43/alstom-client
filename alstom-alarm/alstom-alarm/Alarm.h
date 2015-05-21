@@ -10,7 +10,6 @@
 
 @interface Alarm : NSObject
 
-
 @property (nonatomic, strong) NSString *mId;
 @property (nonatomic, strong) NSString *mParentId;
 @property (nonatomic, strong) NSString *mAlarmCode;
@@ -18,6 +17,7 @@
 @property (nonatomic, strong) NSString *mLevel;
 
 + (NSArray *) ALARM_LEVELS;
+- (NSComparisonResult) compare:(Alarm *)other;
 - (Alarm *) initWithRandomForParent:(NSString *) parentId;
 - (void) pushResolved;
 

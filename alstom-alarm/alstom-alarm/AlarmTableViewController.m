@@ -12,11 +12,14 @@
 #import "Alarm.h"
 
 @interface AlarmTableViewController ()
-@property (weak, nonatomic) id<Entity> mEntity;
-@property (weak, nonatomic) NSArray *mAlarms;
+@property (strong, nonatomic) NSMutableArray *mAlarms;
 @end
 
 @implementation AlarmTableViewController
+
+- (void) didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,8 +30,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.mEntity = [(EntityContainerViewController *)[self parentViewController] mEntity];
-    self.mAlarms = [self.mEntity getAlarms];
+    self.mAlarms = [[self.mParentVC.mEntity getAlarms] mutableCopy];
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +68,14 @@
             [field_level setText:alarm.mLevel];
             [field_desc setText:alarm.mDescription];
             [field_location setText:alarm.mParentId];
+            
+            if ([alarm.mLevel isEqual: @"Err"]) {
+                [cell setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2f]];
+            } else if ([alarm.mLevel isEqual: @"Warn"]) {
+                [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
+            } else if ([alarm.mLevel isEqual: @"Info"]) {
+                [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
+            }
             break;
     }
     
@@ -80,17 +91,25 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        Alarm *alarm = [self.mAlarms objectAtIndex:indexPath.row-1];
+        [alarm pushResolved];
+        [self.mAlarms removeObject:alarm];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"Resolved";
+}
+
 
 /*
 // Override to support rearranging the table view.

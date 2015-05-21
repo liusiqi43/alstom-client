@@ -42,5 +42,16 @@
     [[DataFetcher sharedInstance] setAlarmResolved:self.mId];
 }
 
+- (NSComparisonResult) compare:(Alarm *)other
+{
+    int self_index = (int)[[Alarm ALARM_LEVELS] indexOfObject:self.mLevel];
+    int other_index = (int)[[Alarm ALARM_LEVELS] indexOfObject:other.mLevel];
+    
+    if (self_index > other_index) {
+        return NSOrderedAscending;
+    } else {
+        return NSOrderedDescending;
+    }
+}
 
 @end

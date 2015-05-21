@@ -107,7 +107,7 @@
 
 - (NSArray *)getAlarms
 {
-    return self.mAlarms;
+    return [self.mAlarms sortedArrayUsingSelector:@selector(compare:)];
 }
 
 @end

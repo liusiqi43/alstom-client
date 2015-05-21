@@ -98,7 +98,7 @@ NSString *const HOST_URL = @"http://169.254.91.226:3000/";
     NSLog(@"%@", req.URL);
     NSURLResponse *res = nil;
     NSError *err = nil;
-    [NSURLConnection sendSynchronousRequest:req returningResponse:&res error:&err];
+//    [NSURLConnection sendSynchronousRequest:req returningResponse:&res error:&err];
 }
 
 @end

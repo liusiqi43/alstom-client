@@ -7,7 +7,6 @@
 //
 
 #import "EntityDescViewController.h"
-#import "EntityContainerViewController.h"
 #import "Entity.h"
 
 @interface EntityDescViewController ()
@@ -16,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mDesc1;
 @property (weak, nonatomic) IBOutlet UILabel *mDesc2;
 @property (weak, nonatomic) IBOutlet UILabel *mDesc3;
-@property (weak, nonatomic) id<Entity> mEntity;
 
 @end
 
@@ -26,11 +24,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.mEntity = [(EntityContainerViewController *)[self parentViewController] mEntity];
-    [self.mTitle setText:[self.mEntity getTitle]];
-    [self.mDesc1 setText:[self.mEntity getDesc1]];
-    [self.mDesc2 setText:[self.mEntity getDesc2]];
-    [self.mDesc3 setText:[self.mEntity getDesc3]];
+    [self.mTitle setText:[self.mParentVC.mEntity getTitle]];
+    [self.mDesc1 setText:[self.mParentVC.mEntity getDesc1]];
+    [self.mDesc2 setText:[self.mParentVC.mEntity getDesc2]];
+    [self.mDesc3 setText:[self.mParentVC.mEntity getDesc3]];
 }
 
 - (void)didReceiveMemoryWarning {

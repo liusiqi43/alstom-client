@@ -8,7 +8,7 @@
 
 #import "EquipmentViewController.h"
 
-@interface EquipmentViewController ()
+@interface EquipmentViewController () <UIScrollViewDelegate>
 
 @end
 
@@ -16,12 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.scrollView.minimumZoomScale=0.5;
+    self.scrollView.maximumZoomScale=6.0;
+    self.scrollView.contentSize=CGSizeMake(1280, 960);
+    self.scrollView.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.map;
 }
 
 @end

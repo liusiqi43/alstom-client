@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EntityContainerViewController.h"
 
 @interface AlarmTableViewController : UITableViewController
+
+@property (weak, nonatomic) EntityContainerViewController *mParentVC;
 
 @end
