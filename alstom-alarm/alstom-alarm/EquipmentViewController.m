@@ -24,12 +24,7 @@
     self.mEquipements = [NSMutableDictionary dictionary];
     self.mBubbles = [NSMutableArray array];
     
-
-    self.map.frame = self.scrollView.bounds;
     self.scrollView.contentSize = self.map.image.size;
-    self.scrollView.delegate=self;
-    NSLog(@"%f, %f", self.map.frame.size.width, self.map.image.size.width);
-    
     for (int i=0; i<100; ++i) {
         Equipment *equipment = [[Equipment alloc] initWithRandom];
         if ([self.mEquipements objectForKey:equipment.mId] != nil)
@@ -52,6 +47,17 @@
             }
         }
     }
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.scrollView.delegate=self;
+    [self.scrollView setMinimumZoomScale:1.5];
+    [self.scrollView setZoomScale:2.0];
+    NSLog(@"%f, %f", self.map.frame.size.width, self.map.image.size.width);
+    NSLog(@"%f", self.scrollView.minimumZoomScale);
+
 }
 
 - (void)onTap:(UITapGestureRecognizer *)sender
@@ -84,7 +90,7 @@
     UIView *circleView = [[UIView alloc] initWithFrame:CGRectMake(x-r, y-r, 2*r, 2*r)];
     circleView.alpha = 0.5;
     circleView.layer.cornerRadius = r;
-    circleView.backgroundColor = [UIColor whiteColor];
+    circleView.backgroundColor = [UIColor blueColor];
     
     [circleView setStringTag:equipment.mId];
     [self.map addSubview:circleView];

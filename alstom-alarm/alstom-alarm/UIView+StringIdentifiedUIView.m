@@ -36,8 +36,8 @@ static NSString *kTimerKey = @"TimerKey";
 
 - (void) setColor
 {
-    if (![self.backgroundColor isEqual:[UIColor whiteColor]]) {
-        self.backgroundColor = [UIColor whiteColor];
+    if (![self.backgroundColor isEqual:[UIColor blueColor]]) {
+        self.backgroundColor = [UIColor blueColor];
     } else {
         self.backgroundColor = (UIColor *) [self.timer userInfo];
     }

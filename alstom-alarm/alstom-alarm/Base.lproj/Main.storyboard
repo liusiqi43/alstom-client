@@ -135,29 +135,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc6-aJ-1lF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc6-aJ-1lF">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nyc" translatesAutoresizingMaskIntoConstraints="NO" id="g7e-9n-u1H">
+                                    <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="metro" translatesAutoresizingMaskIntoConstraints="NO" id="g7e-9n-u1H">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
-                                        <color key="backgroundColor" red="0.1040437812" green="0.179587883" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.30421713186160837" blue="0.084477592443920349" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="g7e-9n-u1H" secondAttribute="bottom" id="05w-9b-K4x"/>
-                                    <constraint firstItem="g7e-9n-u1H" firstAttribute="leading" secondItem="Vc6-aJ-1lF" secondAttribute="leading" id="P6H-it-1cQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="g7e-9n-u1H" secondAttribute="trailing" id="Paj-gu-KNk"/>
-                                    <constraint firstItem="g7e-9n-u1H" firstAttribute="top" secondItem="Vc6-aJ-1lF" secondAttribute="top" id="axh-JY-moH"/>
+                                    <constraint firstItem="g7e-9n-u1H" firstAttribute="leading" secondItem="Vc6-aJ-1lF" secondAttribute="leading" id="Vqv-uk-Vnn"/>
+                                    <constraint firstAttribute="bottom" secondItem="g7e-9n-u1H" secondAttribute="bottom" id="lDg-V3-bwg"/>
+                                    <constraint firstItem="g7e-9n-u1H" firstAttribute="top" secondItem="Vc6-aJ-1lF" secondAttribute="top" id="nCn-Xh-UTy"/>
+                                    <constraint firstAttribute="trailing" secondItem="g7e-9n-u1H" secondAttribute="trailing" id="q45-iH-cyb"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.22910983970129106" green="1" blue="0.29256299685675191" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Vc6-aJ-1lF" secondAttribute="trailing" id="0Re-nX-vko"/>
-                            <constraint firstItem="Vc6-aJ-1lF" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="co9-Wc-dnD"/>
-                            <constraint firstAttribute="bottom" secondItem="Vc6-aJ-1lF" secondAttribute="bottom" id="dGn-Tu-jbZ"/>
-                            <constraint firstItem="Vc6-aJ-1lF" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="yRa-kd-I1x"/>
+                            <constraint firstAttribute="trailing" secondItem="Vc6-aJ-1lF" secondAttribute="trailing" id="8AD-qs-Gq4"/>
+                            <constraint firstItem="Vc6-aJ-1lF" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="GmP-g5-DJI"/>
+                            <constraint firstItem="Vc6-aJ-1lF" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="Mgn-QY-yAZ"/>
+                            <constraint firstItem="Vc6-aJ-1lF" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="kFD-iz-ywq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gcy-WF-RgF"/>
@@ -183,13 +180,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="be1-51-JHh">
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="be1-51-JHh">
                                 <rect key="frame" x="0.0" y="381" width="600" height="219"/>
                                 <connections>
                                     <segue destination="p1E-Ch-qYm" kind="embed" identifier="alarm_table" id="y24-c1-USI"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GQ-34-Qkm">
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GQ-34-Qkm">
                                 <rect key="frame" x="0.0" y="64" width="600" height="317"/>
                                 <connections>
                                     <segue destination="6Mw-jk-r1Q" kind="embed" identifier="entity_desc" id="dGP-s9-jMc"/>
@@ -201,6 +198,7 @@
                             <constraint firstAttribute="bottom" secondItem="be1-51-JHh" secondAttribute="bottom" id="BNe-Jk-yv3"/>
                             <constraint firstItem="be1-51-JHh" firstAttribute="leading" secondItem="cIX-BI-SwK" secondAttribute="leading" id="HjH-cC-hAu"/>
                             <constraint firstItem="9GQ-34-Qkm" firstAttribute="top" secondItem="l7i-a0-ekJ" secondAttribute="bottom" id="JhN-8c-IO4"/>
+                            <constraint firstItem="be1-51-JHh" firstAttribute="top" secondItem="cIX-BI-SwK" secondAttribute="top" constant="381" id="Mdc-rs-Wb2"/>
                             <constraint firstItem="be1-51-JHh" firstAttribute="top" secondItem="9GQ-34-Qkm" secondAttribute="bottom" id="Qen-Hd-YMH"/>
                             <constraint firstItem="9GQ-34-Qkm" firstAttribute="leading" secondItem="be1-51-JHh" secondAttribute="leading" id="TGR-HX-pli"/>
                             <constraint firstAttribute="trailing" secondItem="9GQ-34-Qkm" secondAttribute="trailing" id="XHO-rD-KHE"/>
@@ -497,7 +495,7 @@
     </scenes>
     <resources>
         <image name="map" width="24" height="24"/>
-        <image name="nyc" width="2560" height="1440"/>
+        <image name="metro" width="517" height="518"/>
         <image name="train" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
