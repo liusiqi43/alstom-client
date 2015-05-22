@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Equipment.h"
 
 @interface EquipmentViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *map;
+
+-(UIView *)addEquipmentToMapAtX:(float)x
+                          Y:(float)y
+                     radius:(float)r
+               forEquipment:(Equipment *)equipment;
 
 @end
 

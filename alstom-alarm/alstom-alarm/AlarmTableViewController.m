@@ -29,9 +29,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.mAlarms = [[self.mParentVC.mEntity getAlarms] mutableCopy];
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake(-65, 0, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,13 +83,13 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
 
 
 // Override to support editing the table view.

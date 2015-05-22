@@ -110,4 +110,9 @@
     return [self.mAlarms sortedArrayUsingSelector:@selector(compare:)];
 }
 
+- (NSString *)getType
+{
+    return @"Train";
+}
+
 @end

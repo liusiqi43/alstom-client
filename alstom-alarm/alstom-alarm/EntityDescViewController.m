@@ -11,6 +11,7 @@
 
 @interface EntityDescViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UILabel *mTitle;
 @property (weak, nonatomic) IBOutlet UILabel *mDesc1;
 @property (weak, nonatomic) IBOutlet UILabel *mDesc2;
@@ -28,6 +29,14 @@
     [self.mDesc1 setText:[self.mParentVC.mEntity getDesc1]];
     [self.mDesc2 setText:[self.mParentVC.mEntity getDesc2]];
     [self.mDesc3 setText:[self.mParentVC.mEntity getDesc3]];
+    
+    if ([[self.mParentVC.mEntity getType] isEqualToString:@"Train"]) {
+        [self.backgroundImage setImage:[UIImage imageNamed:@"train_bg"]];
+    } else if ([[self.mParentVC.mEntity getType] isEqualToString:@"Station"]) {
+        [self.backgroundImage setImage:[UIImage imageNamed:@"station_bg"]];
+    } else if ([[self.mParentVC.mEntity getType] isEqualToString:@"Aiguillage"]) {
+        [self.backgroundImage setImage:[UIImage imageNamed:@"aiguillage_bg"]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

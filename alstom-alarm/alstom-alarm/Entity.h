@@ -15,4 +15,5 @@
 - (NSString *)getDesc2;
 - (NSString *)getDesc3;
 - (NSArray *)getAlarms;
+- (NSString *)getType;
 @end
