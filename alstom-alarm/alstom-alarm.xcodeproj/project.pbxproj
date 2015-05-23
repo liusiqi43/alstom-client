@@ -23,7 +23,7 @@
 		5792619B1B0E9A73001910D7 /* EquipmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792619A1B0E9A73001910D7 /* EquipmentViewController.m */; };
 		5792619E1B0F0B56001910D7 /* Equipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5792619D1B0F0B56001910D7 /* Equipment.m */; };
 		579261A11B0F1268001910D7 /* UIView+StringIdentifiedUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261A01B0F1268001910D7 /* UIView+StringIdentifiedUIView.m */; };
-		579261A41B0FDC19001910D7 /* CenteredScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261A31B0FDC19001910D7 /* CenteredScrollView.m */; };
+		57C407A91B1062DC002B6FBE /* NYOBetterZoomUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C407A81B1062DC002B6FBE /* NYOBetterZoomUIScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,8 @@
 		5792619D1B0F0B56001910D7 /* Equipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Equipment.m; sourceTree = "<group>"; };
 		5792619F1B0F1268001910D7 /* UIView+StringIdentifiedUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+StringIdentifiedUIView.h"; sourceTree = "<group>"; };
 		579261A01B0F1268001910D7 /* UIView+StringIdentifiedUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+StringIdentifiedUIView.m"; sourceTree = "<group>"; };
-		579261A21B0FDC19001910D7 /* CenteredScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenteredScrollView.h; sourceTree = "<group>"; };
-		579261A31B0FDC19001910D7 /* CenteredScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenteredScrollView.m; sourceTree = "<group>"; };
+		57C407A71B1062DC002B6FBE /* NYOBetterZoomUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYOBetterZoomUIScrollView.h; sourceTree = "<group>"; };
+		57C407A81B1062DC002B6FBE /* NYOBetterZoomUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYOBetterZoomUIScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +162,8 @@
 		5792617D1B0D43B7001910D7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				57C407A71B1062DC002B6FBE /* NYOBetterZoomUIScrollView.h */,
+				57C407A81B1062DC002B6FBE /* NYOBetterZoomUIScrollView.m */,
 				579261841B0D443B001910D7 /* Train.h */,
 				579261851B0D443B001910D7 /* Train.m */,
 				579261811B0D43FC001910D7 /* DataFetcher.h */,
@@ -173,8 +175,6 @@
 				5792619D1B0F0B56001910D7 /* Equipment.m */,
 				5792619F1B0F1268001910D7 /* UIView+StringIdentifiedUIView.h */,
 				579261A01B0F1268001910D7 /* UIView+StringIdentifiedUIView.m */,
-				579261A21B0FDC19001910D7 /* CenteredScrollView.h */,
-				579261A31B0FDC19001910D7 /* CenteredScrollView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -282,7 +282,7 @@
 				579261861B0D443B001910D7 /* Train.m in Sources */,
 				579261951B0E7C88001910D7 /* EntityContainerViewController.m in Sources */,
 				5792618F1B0E795A001910D7 /* AlarmTableViewController.m in Sources */,
-				579261A41B0FDC19001910D7 /* CenteredScrollView.m in Sources */,
+				57C407A91B1062DC002B6FBE /* NYOBetterZoomUIScrollView.m in Sources */,
 				579261A11B0F1268001910D7 /* UIView+StringIdentifiedUIView.m in Sources */,
 				579261921B0E7C64001910D7 /* EntityDescViewController.m in Sources */,
 				579261891B0D49EC001910D7 /* Alarm.m in Sources */,

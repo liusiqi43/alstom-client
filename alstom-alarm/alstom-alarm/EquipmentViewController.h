@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Equipment.h"
+#import "NYOBetterZoomUIScrollView.h"
 
 @interface EquipmentViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *map;
+@property (weak, nonatomic) IBOutlet NYOBetterZoomUIScrollView *scrollView;
 
 -(UIView *)addEquipmentToMapAtX:(float)x
                           Y:(float)y

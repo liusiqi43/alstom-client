@@ -15,16 +15,73 @@
 @interface EquipmentViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 @property (strong, nonatomic) NSMutableDictionary *mEquipements;
 @property (strong, nonatomic) NSMutableArray *mBubbles;
+
 @end
 
 @implementation EquipmentViewController
+
+- (void)setMinimumZoomForCurrentFrame {
+    UIImageView *imageView = (UIImageView *)[self.scrollView childView];
+    
+    // Work out a nice minimum zoom for the image - if it's smaller than the ScrollView then 1.0x zoom otherwise a scaled down zoom so it fits in the ScrollView entirely when zoomed out
+    CGSize imageSize = imageView.image.size;
+    CGSize scrollSize = self.scrollView.frame.size;
+    CGFloat widthRatio = scrollSize.width / imageSize.width;
+    CGFloat heightRatio = scrollSize.height / imageSize.height;
+    CGFloat minimumZoom = MAX(1.0, (widthRatio > heightRatio) ? heightRatio : widthRatio);
+    
+    [self.scrollView setMinimumZoomScale:minimumZoom];
+    NSLog(@"minimumZoom = %f, heightRatio = %f, widthRatio = %f", minimumZoom, heightRatio, widthRatio);
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    NSLog(@"zoomScale = %f", scrollView.zoomScale);
+}
+
+
+- (void)setMinimumZoomForCurrentFrameAndAnimateIfNecessary {
+    BOOL wasAtMinimumZoom = NO;
+    
+    if(self.scrollView.zoomScale == self.scrollView.minimumZoomScale) {
+        wasAtMinimumZoom = YES;
+    }
+    
+    [self setMinimumZoomForCurrentFrame];
+    
+    if(wasAtMinimumZoom || self.scrollView.zoomScale < self.scrollView.minimumZoomScale) {
+        [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
+    }	
+}
+
+- (void)scrollViewSetup {
+    [self.scrollView setBackgroundColor:[UIColor blackColor]];
+    [self.scrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+    [self.scrollView setShowsVerticalScrollIndicator:NO];
+    [self.scrollView setShowsHorizontalScrollIndicator:NO];
+    [self.scrollView setBouncesZoom:NO];
+    [self.scrollView setDelegate:self];
+    
+    UIImage *image = [UIImage imageNamed:@"metro"];
+    self.scrollView.childView = [[UIImageView alloc] initWithImage:image];
+    // Finish the ScrollView setup
+    [self.scrollView setContentSize:_scrollView.childView.frame.size];
+    [self.scrollView setChildView:_scrollView.childView];
+    [self.scrollView setMaximumZoomScale:6.0];
+    [self setMinimumZoomForCurrentFrame];
+    [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:NO];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    // Aspect ratio of ScrollView has changed, need to recalculate the minimum zoom
+    [self setMinimumZoomForCurrentFrameAndAnimateIfNecessary];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mEquipements = [NSMutableDictionary dictionary];
     self.mBubbles = [NSMutableArray array];
     
-    self.scrollView.contentSize = self.map.image.size;
+    [self scrollViewSetup];
     for (int i=0; i<100; ++i) {
         Equipment *equipment = [[Equipment alloc] initWithRandom];
         if ([self.mEquipements objectForKey:equipment.mId] != nil)
@@ -49,17 +106,6 @@
     }
 }
 
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    self.scrollView.delegate=self;
-    [self.scrollView setMinimumZoomScale:1.5];
-    [self.scrollView setZoomScale:2.0];
-    NSLog(@"%f, %f", self.map.frame.size.width, self.map.image.size.width);
-    NSLog(@"%f", self.scrollView.minimumZoomScale);
-
-}
-
 - (void)onTap:(UITapGestureRecognizer *)sender
 {
     if (sender.state == UIGestureRecognizerStateEnded && sender.view.stringTag != nil)
@@ -75,7 +121,7 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return self.map;
+    return [self.scrollView childView];
 }
 
 -(UIView *)addEquipmentToMapAtX:(float)x
@@ -83,9 +129,9 @@
                   radius:(float)r
                forEquipment:(Equipment *)equipment
 {
-    x *= self.map.image.size.width;
-    y *= self.map.image.size.height;
-    r *= self.map.image.size.width;
+    x *= ((UIImageView *) self.scrollView.childView).image.size.width;
+    y *= ((UIImageView *) self.scrollView.childView).image.size.height;
+    r *= ((UIImageView *) self.scrollView.childView).image.size.width;
     
     UIView *circleView = [[UIView alloc] initWithFrame:CGRectMake(x-r, y-r, 2*r, 2*r)];
     circleView.alpha = 0.5;
@@ -93,7 +139,7 @@
     circleView.backgroundColor = [UIColor blueColor];
     
     [circleView setStringTag:equipment.mId];
-    [self.map addSubview:circleView];
+    [self.scrollView.childView addSubview:circleView];
     [self.mBubbles addObject:circleView];
     return circleView;
 }

@@ -135,19 +135,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc6-aJ-1lF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc6-aJ-1lF" customClass="NYOBetterZoomUIScrollView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="metro" translatesAutoresizingMaskIntoConstraints="NO" id="g7e-9n-u1H">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="g7e-9n-u1H" firstAttribute="leading" secondItem="Vc6-aJ-1lF" secondAttribute="leading" id="Vqv-uk-Vnn"/>
-                                    <constraint firstAttribute="bottom" secondItem="g7e-9n-u1H" secondAttribute="bottom" id="lDg-V3-bwg"/>
-                                    <constraint firstItem="g7e-9n-u1H" firstAttribute="top" secondItem="Vc6-aJ-1lF" secondAttribute="top" id="nCn-Xh-UTy"/>
-                                    <constraint firstAttribute="trailing" secondItem="g7e-9n-u1H" secondAttribute="trailing" id="q45-iH-cyb"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <constraints>
@@ -159,8 +148,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Gcy-WF-RgF"/>
                     <connections>
-                        <outlet property="map" destination="g7e-9n-u1H" id="NSW-Uv-g7o"/>
-                        <outlet property="scrollView" destination="Vc6-aJ-1lF" id="fUY-yY-zj5"/>
+                        <outlet property="scrollView" destination="Vc6-aJ-1lF" id="7YB-Zn-ghK"/>
                         <segue destination="reN-ow-SbS" kind="show" identifier="show_details" id="ybh-B9-BwN"/>
                     </connections>
                 </viewController>
@@ -495,7 +483,6 @@
     </scenes>
     <resources>
         <image name="map" width="24" height="24"/>
-        <image name="metro" width="517" height="518"/>
         <image name="train" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
