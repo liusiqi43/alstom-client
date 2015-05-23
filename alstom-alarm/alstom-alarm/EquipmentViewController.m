@@ -63,6 +63,7 @@
     
     UIImage *image = [UIImage imageNamed:@"metro"];
     self.scrollView.childView = [[UIImageView alloc] initWithImage:image];
+    [self.scrollView.childView setUserInteractionEnabled:YES];
     // Finish the ScrollView setup
     [self.scrollView setContentSize:_scrollView.childView.frame.size];
     [self.scrollView setChildView:_scrollView.childView];
