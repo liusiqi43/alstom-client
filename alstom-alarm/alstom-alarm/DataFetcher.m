@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "NSData+Base64.h"
 #import "DataFetcher.h"
 #import "Train.h"
@@ -16,7 +15,7 @@
 
 @implementation DataFetcher
 
-NSString *const HOST_URL = @"http://169.254.91.226:3000/";
+NSString *const HOST_URL = @"http://192.168.0.100:3000/";
 
 +(instancetype) sharedInstance {
     static dispatch_once_t pred;
@@ -44,13 +43,12 @@ NSString *const HOST_URL = @"http://169.254.91.226:3000/";
     NSError *localError = nil;
     NSArray *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
     
-    NSLog(@"%@", parsedObject);
-    
     NSMutableArray *result = [[NSMutableArray alloc] init];
     for (NSDictionary *t in parsedObject) {
-
         NSMutableArray* alarms = [[NSMutableArray alloc] init];
-        for (NSDictionary *item in [t objectForKey:@"alarms"]) {
+        for (NSDictionary *item in [t objectForKey:@"Alarms"]) {
+            if ([[item objectForKey:@"status"] isEqual:@"RESOLVED"])
+                continue;
             Alarm *alarm = [[Alarm alloc] initWithCode:[item objectForKey:@"code"]
                                                     Id:[item objectForKey:@"id"]
                                                  Level:[item objectForKey:@"level"]
@@ -59,7 +57,7 @@ NSString *const HOST_URL = @"http://169.254.91.226:3000/";
             [alarms addObject:alarm];
         }
         
-        Train *train = [[Train alloc] initWithDirection:[t objectForKey:@"direction"] Station:[t objectForKey:@"last_station"] Id:[t objectForKey:@"id"] alarms:alarms];
+        Train *train = [[Train alloc] initWithDirection:[t objectForKey:@"direction"] Station:[t objectForKey:@"last_station"] Id:[t objectForKey:@"name"] alarms:alarms];
         [result addObject:train];
     }
     
@@ -78,13 +76,15 @@ NSString *const HOST_URL = @"http://169.254.91.226:3000/";
     NSError *localError = nil;
     NSArray *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
     
-    NSLog(@"%@", parsedObject);
+//    NSLog(@"%@", parsedObject);
     
     NSMutableArray *result = [[NSMutableArray alloc] init];
     for (NSDictionary *e in parsedObject) {
         
         NSMutableArray* alarms = [[NSMutableArray alloc] init];
-        for (NSDictionary *item in [e objectForKey:@"alarms"]) {
+        for (NSDictionary *item in [e objectForKey:@"Alarms"]) {
+            if ([[item objectForKey:@"status"] isEqual:@"RESOLVED"])
+                continue;
             Alarm *alarm = [[Alarm alloc] initWithCode:[item objectForKey:@"code"]
                                                     Id:[item objectForKey:@"id"]
                                                  Level:[item objectForKey:@"level"]
@@ -92,9 +92,8 @@ NSString *const HOST_URL = @"http://169.254.91.226:3000/";
                                                 parent:[item objectForKey:@"Equipement"]];
             [alarms addObject:alarm];
         }
-        
         Equipment *equipment = [[Equipment alloc] initWithType:[e objectForKey:@"type"]
-                                                            Id:[e objectForKey:@"id"]
+                                                            Id:[e objectForKey:@"name"]
                                                              X:[((NSNumber *) [e objectForKey:@"x"]) floatValue]
                                                              Y:[((NSNumber *) [e objectForKey:@"y"]) floatValue]
                                                         radius:[((NSNumber *) [e objectForKey:@"radius"]) floatValue]
@@ -126,6 +125,7 @@ NSString *const HOST_URL = @"http://169.254.91.226:3000/";
 
 - (UIImage *)fetchMap
 {
+    return [UIImage imageNamed:@"metro"];
     NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@alarms/map/1", HOST_URL]]];
     NSLog(@"%@", req.URL);
     NSURLResponse *res = nil;

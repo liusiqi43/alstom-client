@@ -21,11 +21,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     self.mTrains = [[DataFetcher sharedInstance] fetchTrains];
     [self.mTrains sortUsingSelector:@selector(compareAlarmLevelWithOther:)];
-    
-    NSLog(@"Train counts: %lu", (unsigned long)[self.mTrains count]);
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +42,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%lu", (unsigned long)[self.mTrains count]);
     return [self.mTrains count] + 1;
 }
 
@@ -65,11 +66,11 @@
             
             NSString *max_level = [train getMaxLevel];
             if (max_level != nil) {
-                if ([max_level  isEqual: @"Err"]) {
+                if ([max_level  isEqual: @"CRITICAL"]) {
                     [cell setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2f]];
-                } else if ([max_level  isEqual: @"Warn"]) {
+                } else if ([max_level  isEqual: @"ERROR"]) {
                     [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
-                } else if ([max_level  isEqual: @"Info"]) {
+                } else if ([max_level  isEqual: @"WARNING"]) {
                     [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
                 }
             } else {

@@ -69,11 +69,11 @@
             [field_desc setText:alarm.mDescription];
             [field_location setText:alarm.mParentId];
             
-            if ([alarm.mLevel isEqual: @"Err"]) {
+            if ([alarm.mLevel isEqual: @"CRITICAL"]) {
                 [cell setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2f]];
-            } else if ([alarm.mLevel isEqual: @"Warn"]) {
+            } else if ([alarm.mLevel isEqual: @"ERROR"]) {
                 [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
-            } else if ([alarm.mLevel isEqual: @"Info"]) {
+            } else if ([alarm.mLevel isEqual: @"WARNING"]) {
                 [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
             }
             break;

@@ -10,6 +10,7 @@
 #define ios_DataFetcher_h
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
 @interface DataFetcher : NSObject

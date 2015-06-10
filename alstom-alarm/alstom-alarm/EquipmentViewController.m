@@ -36,7 +36,7 @@
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    NSLog(@"zoomScale = %f", scrollView.zoomScale);
+//    NSLog(@"zoomScale = %f", scrollView.zoomScale);
 }
 
 
@@ -85,6 +85,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     self.mEquipements = [NSMutableDictionary dictionary];
     self.mBubbles = [NSMutableArray array];
     
@@ -108,9 +112,9 @@
         if (level == nil) {
             [circleView stopBlinking];
         } else {
-            if ([[equipment getMaxLevel] isEqualToString:@"Err"]) {
+            if ([[equipment getMaxLevel] isEqualToString:@"CRITICAL"]) {
                 [circleView startBlinkingWithColor:[UIColor redColor]];
-            } else if ([[equipment getMaxLevel] isEqualToString:@"Warn"]) {
+            } else if ([[equipment getMaxLevel] isEqualToString:@"ERROR"]) {
                 [circleView startBlinkingWithColor:[UIColor yellowColor]];
             }
         }
