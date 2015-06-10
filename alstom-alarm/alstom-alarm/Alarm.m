@@ -24,6 +24,21 @@
     return ALARM_LEVELS;
 }
 
+- (Alarm *) initWithCode:(NSString *)code
+                      Id:(NSString *)ID
+                   Level:(NSString *)level
+                    desc:(NSString *)desc
+                  parent:(NSString *)parent
+{
+    self.mParentId = parent;
+    self.mId = ID;
+    self.mAlarmCode = code;
+    self.mLevel = level;
+    self.mDescription = desc;
+    
+    return self;
+}
+
 - (Alarm *) initWithRandomForParent:(NSString *) parentId
 {
     self.mParentId = parentId;

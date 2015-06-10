@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		575C36751B28AFFF00665899 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 575C36741B28AFFF00665899 /* NSData+Base64.m */; };
 		579261551B0CDCFC001910D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261541B0CDCFC001910D7 /* main.m */; };
 		579261581B0CDCFC001910D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261571B0CDCFC001910D7 /* AppDelegate.m */; };
 		579261611B0CDCFC001910D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5792615F1B0CDCFC001910D7 /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		575C36731B28AFFF00665899 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		575C36741B28AFFF00665899 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		5792614F1B0CDCFC001910D7 /* alstom-alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alstom-alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		579261531B0CDCFC001910D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		579261541B0CDCFC001910D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 		5792617D1B0D43B7001910D7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				575C36731B28AFFF00665899 /* NSData+Base64.h */,
+				575C36741B28AFFF00665899 /* NSData+Base64.m */,
 				57C407A71B1062DC002B6FBE /* NYOBetterZoomUIScrollView.h */,
 				57C407A81B1062DC002B6FBE /* NYOBetterZoomUIScrollView.m */,
 				579261841B0D443B001910D7 /* Train.h */,
@@ -282,6 +287,7 @@
 				579261861B0D443B001910D7 /* Train.m in Sources */,
 				579261951B0E7C88001910D7 /* EntityContainerViewController.m in Sources */,
 				5792618F1B0E795A001910D7 /* AlarmTableViewController.m in Sources */,
+				575C36751B28AFFF00665899 /* NSData+Base64.m in Sources */,
 				57C407A91B1062DC002B6FBE /* NYOBetterZoomUIScrollView.m in Sources */,
 				579261A11B0F1268001910D7 /* UIView+StringIdentifiedUIView.m in Sources */,
 				579261921B0E7C64001910D7 /* EntityDescViewController.m in Sources */,

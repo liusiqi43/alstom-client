@@ -33,6 +33,23 @@
     return self;
 }
 
+- (Equipment *) initWithType:(NSString *)type
+                          Id:(NSString *)ID
+                           X:(float)x
+                           Y:(float)y
+                      radius:(float)radius
+                      alarms:(NSMutableArray *)alarms
+{
+    self = [self init];
+    self.mType = type;
+    self.mId = ID;
+    self.mX = x;
+    self.mY = y;
+    self.mRadius = radius;
+    self.mAlarms = alarms;
+    return self;
+}
+
 - (NSString *)getTitle
 {
     return [NSString stringWithFormat:@"Equipment #%@", self.mId];

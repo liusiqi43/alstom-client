@@ -17,6 +17,11 @@
 @property (nonatomic, strong) NSMutableArray  *mAlarms;
 
 - (Train *) initWithRandom;
+- (Train *) initWithDirection:(NSString *)direction
+                      Station:(NSString *)station
+                           Id:(NSString *)tid
+                       alarms:(NSMutableArray *)alarms;
+
 - (NSComparisonResult) compareAlarmLevelWithOther: (Train *) other;
 - (NSString *) getMaxLevel;
 @end

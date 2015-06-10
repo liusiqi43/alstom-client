@@ -9,6 +9,7 @@
 #import "EquipmentViewController.h"
 #import "Equipment.h"
 #import "Entity.h"
+#import "DataFetcher.h"
 #import "UIView+StringIdentifiedUIView.h"
 #import "EntityContainerViewController.h"
 
@@ -77,18 +78,27 @@
     [self setMinimumZoomForCurrentFrameAndAnimateIfNecessary];
 }
 
+- (UIView *)addEquipmentToMap:(Equipment *)equipment
+{
+    return [self addEquipmentToMapAtX:equipment.mX Y:equipment.mY radius:equipment.mRadius forEquipment:equipment];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mEquipements = [NSMutableDictionary dictionary];
     self.mBubbles = [NSMutableArray array];
     
+    // Load map image from server
+    [((UIImageView *) self.scrollView.childView) setImage:[[DataFetcher sharedInstance] fetchMap]];
+    
     [self scrollViewSetup];
-    for (int i=0; i<100; ++i) {
-        Equipment *equipment = [[Equipment alloc] initWithRandom];
+    
+    NSArray *equipments = [[DataFetcher sharedInstance] fetchEquipments];
+    for (Equipment *equipment in equipments) {
         if ([self.mEquipements objectForKey:equipment.mId] != nil)
             continue;
         [self.mEquipements setObject: equipment forKey:equipment.mId];
-        UIView *circleView = [self addEquipmentToMapAtX:equipment.mX Y:equipment.mY radius:equipment.mRadius forEquipment:equipment];
+        UIView *circleView = [self addEquipmentToMap:equipment];
         
         UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                           action:@selector(onTap:)];

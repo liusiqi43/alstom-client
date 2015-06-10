@@ -9,6 +9,7 @@
 #import "TrainTableViewController.h"
 #import "EntityContainerViewController.h"
 #import "Train.h"
+#import "DataFetcher.h"
 
 @interface TrainTableViewController ()
 
@@ -21,12 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mTrains = [[NSMutableArray alloc] init];
-    int nTrains = arc4random() % 10 + 20;
-    for (int i=0; i<nTrains; ++i) {
-        [self.mTrains addObject:[[Train alloc] initWithRandom]];
-    }
-    
+    self.mTrains = [[DataFetcher sharedInstance] fetchTrains];
     [self.mTrains sortUsingSelector:@selector(compareAlarmLevelWithOther:)];
     
     NSLog(@"Train counts: %lu", (unsigned long)[self.mTrains count]);

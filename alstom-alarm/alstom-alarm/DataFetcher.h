@@ -23,12 +23,12 @@ FOUNDATION_EXPORT NSString *const HOST_URL;
 -(instancetype) init __attribute__((unavailable("init not available, call sharedInstance instead")));
 +(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
 
-- (NSArray *) fetchTrainsForDeparture:(NSNumber *)_departureId
-                              Arrival:(NSNumber *)_arrivalId;
-
-- (NSArray *) fetchAllTrains;
+- (NSMutableArray *) fetchTrains;
+- (NSMutableArray *) fetchEquipments;
 
 - (void) setAlarmResolved:(NSString *)alarmId;
+
+- (UIImage *)fetchMap;
 
 @end
 

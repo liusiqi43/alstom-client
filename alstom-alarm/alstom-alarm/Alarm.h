@@ -19,6 +19,11 @@
 + (NSArray *) ALARM_LEVELS;
 - (NSComparisonResult) compare:(Alarm *)other;
 - (Alarm *) initWithRandomForParent:(NSString *) parentId;
+- (Alarm *) initWithCode:(NSString *)code
+                      Id:(NSString *)ID
+                   Level:(NSString *)level
+                    desc:(NSString *)desc
+                  parent:(NSString *)parent;
 - (void) pushResolved;
 
 @end

@@ -21,6 +21,13 @@
 @property float mRadius;
 
 - (Equipment *) initWithRandom;
+- (Equipment *) initWithType:(NSString *)type
+                          Id:(NSString *)ID
+                           X:(float)x
+                           Y:(float)y
+                      radius:(float)radius
+                      alarms:(NSMutableArray *)alarms;
+
 - (NSString *) getMaxLevel;
 
 @end
