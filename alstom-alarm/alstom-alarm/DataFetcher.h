@@ -27,7 +27,7 @@ FOUNDATION_EXPORT NSString *const HOST_URL;
 - (NSMutableArray *) fetchTrains;
 - (NSMutableArray *) fetchEquipments;
 
-- (void) setAlarmResolved:(NSString *)alarmId;
+- (BOOL) setAlarmResolved:(NSString *)alarmId;
 
 - (UIImage *)fetchMap;
 

@@ -53,11 +53,16 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
                                                     Id:[item objectForKey:@"id"]
                                                  Level:[item objectForKey:@"level"]
                                                   desc:[item objectForKey:@"description"]
-                                                parent:[item objectForKey:@"Equipement"]];
+                                                parent:[item objectForKey:@"Equipement"]
+                                                status:[item objectForKey:@"status"]];
             [alarms addObject:alarm];
         }
         
-        Train *train = [[Train alloc] initWithDirection:[t objectForKey:@"direction"] Station:[t objectForKey:@"last_station"] Id:[t objectForKey:@"name"] alarms:alarms];
+        Train *train = [[Train alloc] initWithDirection:[t objectForKey:@"direction"]
+                                                Station:[t objectForKey:@"last_station"]
+                                                     Id:[t objectForKey:@"name"]
+                                                 Status:[t objectForKey:@"status"]
+                                                 alarms:alarms];
         [result addObject:train];
     }
     
@@ -89,7 +94,8 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
                                                     Id:[item objectForKey:@"id"]
                                                  Level:[item objectForKey:@"level"]
                                                   desc:[item objectForKey:@"description"]
-                                                parent:[item objectForKey:@"Equipement"]];
+                                                parent:[item objectForKey:@"Equipement"]
+                                                status:[item objectForKey:@"status"]];
             [alarms addObject:alarm];
         }
         Equipment *equipment = [[Equipment alloc] initWithType:[e objectForKey:@"type"]
@@ -105,7 +111,7 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
 }
 
 
-- (void) setAlarmResolved:(NSString *)alarmId
+- (BOOL) setAlarmResolved:(NSString *)alarmId
 {
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@alarms/%@", HOST_URL, alarmId]]];
     NSLog(@"%@", req.URL);
@@ -121,6 +127,8 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
     [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [req setHTTPBody:postData];
     [NSURLConnection sendSynchronousRequest:req returningResponse:&res error:&err];
+    
+    return err == nil;
 }
 
 - (UIImage *)fetchMap

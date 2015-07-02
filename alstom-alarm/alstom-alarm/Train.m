@@ -21,7 +21,7 @@
     self.mId = [tids objectAtIndex:arc4random() % [tids count]];
     NSArray * stations = [NSArray arrayWithObjects:@"BOS", @"TOL", @"ARS", @"SAP", @"SAB", @"SQW", @"MOO", @"ALS", nil];
     self.mStation = [stations objectAtIndex:arc4random() % [stations count]];
-
+    self.mStatus = @"";
     self.mAlarms = [[NSMutableArray alloc] init];
     NSInteger alarmCount = arc4random() % 3;
     for (int i=0; i<alarmCount; ++i) {
@@ -34,12 +34,14 @@
 - (Train *) initWithDirection:(NSString *)direction
                       Station:(NSString *)station
                            Id:(NSString *)tid
+                       Status:(NSString *)status
                        alarms:(NSMutableArray *)alarms
 {
     self = [self init];
     self.mDirection = direction;
     self.mStation = station;
     self.mId = tid;
+    self.mStatus = status;
     self.mAlarms = alarms;
     return self;
 }

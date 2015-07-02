@@ -10,6 +10,7 @@
 #import "EntityContainerViewController.h"
 #import "Entity.h"
 #import "Alarm.h"
+#import "UIView+Toast.h"
 
 @interface AlarmTableViewController ()
 @property (strong, nonatomic) NSMutableArray *mAlarms;
@@ -49,6 +50,15 @@
     return [self.mAlarms count]+1;
 }
 
+- (void) pushResolved:(UIButton *)sender {
+    Alarm *alarm = [self.mAlarms objectAtIndex:sender.tag];
+    if ([alarm pushResolved]) {
+        self.mAlarms = [[self.mAlarms sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
+        [self.tableView reloadData];
+        [self.view makeToast:@"Aquittement enregistré."];
+    }
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
@@ -64,52 +74,31 @@
             UILabel *field_level = (UILabel *) [cell viewWithTag:2];
             UILabel *field_desc = (UILabel *) [cell viewWithTag:3];
             UILabel *field_location = (UILabel *) [cell viewWithTag:4];
+            UIButton *resolveButton = (UIButton *) [cell viewWithTag:5];
             [field_code setText:alarm.mAlarmCode];
             [field_level setText:alarm.mLevel];
             [field_desc setText:alarm.mDescription];
             [field_location setText:alarm.mParentId];
             
-            if ([alarm.mLevel isEqual: @"CRITICAL"]) {
+            [resolveButton setTag:indexPath.row-1];
+            [resolveButton addTarget:self action:@selector(pushResolved:) forControlEvents:UIControlEventTouchUpInside];
+            
+            if ([alarm.mLevel isEqualToString: @"CRITICAL"]) {
                 [cell setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2f]];
-            } else if ([alarm.mLevel isEqual: @"ERROR"]) {
+            } else if ([alarm.mLevel isEqualToString: @"ERROR"]) {
                 [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
-            } else if ([alarm.mLevel isEqual: @"WARNING"]) {
+            } else if ([alarm.mLevel isEqualToString: @"WARNING"]) {
                 [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
+            }
+            
+            if ([alarm.mStatus isEqualToString:@"RESOLVED"]) {
+                [cell setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.2f]];
             }
             break;
     }
     
     return cell;
 }
-
-
-
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-
-
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        Alarm *alarm = [self.mAlarms objectAtIndex:indexPath.row-1];
-        [alarm pushResolved];
-        [self.mAlarms removeObject:alarm];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return @"Resolved";
-}
-
 
 /*
 // Override to support rearranging the table view.

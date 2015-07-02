@@ -73,6 +73,10 @@
                 } else if ([max_level  isEqual: @"WARNING"]) {
                     [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
                 }
+            } else if ([train.mStatus isEqual: @"RAS"]) {
+                [cell setBackgroundColor:[[UIColor greenColor] colorWithAlphaComponent:0.2f]];
+            } else if ([train.mStatus isEqual: @"RAS"]) {
+                [cell setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.2f]];
             } else {
                 [cell setBackgroundColor:[UIColor whiteColor]];
             }

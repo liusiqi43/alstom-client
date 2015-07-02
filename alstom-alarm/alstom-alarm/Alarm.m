@@ -29,6 +29,7 @@
                    Level:(NSString *)level
                     desc:(NSString *)desc
                   parent:(NSString *)parent
+                  status:(NSString *)status
 {
     self.mParentId = parent;
     self.mId = ID;
@@ -52,13 +53,26 @@
     return self;
 }
 
-- (void) pushResolved
++ (NSArray *) sortAlarms:(NSArray *)alarms
 {
-    [[DataFetcher sharedInstance] setAlarmResolved:self.mId];
+    return [alarms sortedArrayUsingSelector:@selector(compare:)];
+}
+
+- (BOOL) pushResolved
+{
+    if ([[DataFetcher sharedInstance] setAlarmResolved:self.mId]) {
+        self.mStatus = @"RESOLVED";
+        return YES;
+    }
+    return NO;
 }
 
 - (NSComparisonResult) compare:(Alarm *)other
 {
+    if ([self.mStatus isEqualToString:@"RESOLVED"]) {
+        return NSOrderedDescending;
+    }
+    
     int self_index = (int)[[Alarm ALARM_LEVELS] indexOfObject:self.mLevel];
     int other_index = (int)[[Alarm ALARM_LEVELS] indexOfObject:other.mLevel];
     

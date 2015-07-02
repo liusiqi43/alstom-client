@@ -15,15 +15,18 @@
 @property (nonatomic, strong) NSString *mAlarmCode;
 @property (nonatomic, strong) NSString *mDescription;
 @property (nonatomic, strong) NSString *mLevel;
+@property (nonatomic, strong) NSString *mStatus;
 
 + (NSArray *) ALARM_LEVELS;
++ (NSArray *) sortAlarms;
 - (NSComparisonResult) compare:(Alarm *)other;
 - (Alarm *) initWithRandomForParent:(NSString *) parentId;
 - (Alarm *) initWithCode:(NSString *)code
                       Id:(NSString *)ID
                    Level:(NSString *)level
                     desc:(NSString *)desc
-                  parent:(NSString *)parent;
-- (void) pushResolved;
+                  parent:(NSString *)parent
+                  status:(NSString *)status;
+- (BOOL) pushResolved;
 
 @end
