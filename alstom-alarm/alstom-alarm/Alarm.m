@@ -28,6 +28,7 @@
                       Id:(NSString *)ID
                    Level:(NSString *)level
                     desc:(NSString *)desc
+                location:(NSString *)location
                   parent:(NSString *)parent
                   status:(NSString *)status
 {
@@ -36,6 +37,7 @@
     self.mAlarmCode = code;
     self.mLevel = level;
     self.mDescription = desc;
+    self.mLocation = location;
     
     return self;
 }
@@ -71,6 +73,8 @@
 {
     if ([self.mStatus isEqualToString:@"RESOLVED"]) {
         return NSOrderedDescending;
+    } else if ([other.mStatus isEqualToString:@"RESOLVED"]) {
+        return NSOrderedAscending;
     }
     
     int self_index = (int)[[Alarm ALARM_LEVELS] indexOfObject:self.mLevel];

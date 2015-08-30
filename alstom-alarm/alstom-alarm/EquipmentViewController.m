@@ -125,7 +125,8 @@
 {
     if (sender.state == UIGestureRecognizerStateEnded && sender.view.stringTag != nil)
     {
-        [self performSegueWithIdentifier:@"show_details" sender:[self.mEquipements objectForKey:sender.view.stringTag]];
+        Equipment* e = [self.mEquipements objectForKey:sender.view.stringTag];
+        [self performSegueWithIdentifier:@"equipmentView" sender:e];
     }
 }
 
@@ -162,7 +163,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"show_details"]) {
+    if ([[segue identifier] isEqualToString:@"equipmentView"]) {
         Equipment *equipment = (Equipment *) sender;
         NSLog(@"Equipement: %@", equipment.mId);
         EntityContainerViewController * vc = (EntityContainerViewController *)[segue destinationViewController];

@@ -15,7 +15,7 @@
 
 @implementation DataFetcher
 
-NSString *const HOST_URL = @"http://192.168.0.100:3000/";
+NSString *const HOST_URL = @"http://127.0.0.1:3000/";
 
 +(instancetype) sharedInstance {
     static dispatch_once_t pred;
@@ -53,6 +53,7 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
                                                     Id:[item objectForKey:@"id"]
                                                  Level:[item objectForKey:@"level"]
                                                   desc:[item objectForKey:@"description"]
+                                              location:[item objectForKey:@"location"]
                                                 parent:[item objectForKey:@"Equipement"]
                                                 status:[item objectForKey:@"status"]];
             [alarms addObject:alarm];
@@ -94,6 +95,7 @@ NSString *const HOST_URL = @"http://192.168.0.100:3000/";
                                                     Id:[item objectForKey:@"id"]
                                                  Level:[item objectForKey:@"level"]
                                                   desc:[item objectForKey:@"description"]
+                                              location:[item objectForKey:@"location"]
                                                 parent:[item objectForKey:@"Equipement"]
                                                 status:[item objectForKey:@"status"]];
             [alarms addObject:alarm];
