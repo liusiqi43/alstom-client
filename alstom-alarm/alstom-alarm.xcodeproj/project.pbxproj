@@ -11,12 +11,12 @@
 		5707F7A91B4575D5001E57F8 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5707F7A81B4575D5001E57F8 /* UIView+Toast.m */; };
 		5725160B1B61EA740064D41A /* AttributedUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5725160A1B61EA740064D41A /* AttributedUIButton.m */; };
 		575C36751B28AFFF00665899 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 575C36741B28AFFF00665899 /* NSData+Base64.m */; };
+		57706ACD1BB0B6C700108BC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57706ACC1BB0B6C700108BC2 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		579261551B0CDCFC001910D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261541B0CDCFC001910D7 /* main.m */; };
 		579261581B0CDCFC001910D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261571B0CDCFC001910D7 /* AppDelegate.m */; };
 		579261611B0CDCFC001910D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5792615F1B0CDCFC001910D7 /* Main.storyboard */; };
 		579261661B0CDCFC001910D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579261641B0CDCFC001910D7 /* LaunchScreen.xib */; };
 		579261721B0CDCFC001910D7 /* alstom_alarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261711B0CDCFC001910D7 /* alstom_alarmTests.m */; };
-		5792617C1B0D3FFB001910D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5792617B1B0D3FFB001910D7 /* Images.xcassets */; };
 		579261831B0D43FC001910D7 /* DataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261821B0D43FC001910D7 /* DataFetcher.m */; };
 		579261861B0D443B001910D7 /* Train.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261851B0D443B001910D7 /* Train.m */; };
 		579261891B0D49EC001910D7 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261881B0D49EC001910D7 /* Alarm.m */; };
@@ -48,6 +48,7 @@
 		5725160A1B61EA740064D41A /* AttributedUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedUIButton.m; sourceTree = "<group>"; };
 		575C36731B28AFFF00665899 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		575C36741B28AFFF00665899 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		57706ACC1BB0B6C700108BC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5792614F1B0CDCFC001910D7 /* alstom-alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alstom-alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		579261531B0CDCFC001910D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		579261541B0CDCFC001910D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		5792616B1B0CDCFC001910D7 /* alstom-alarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alstom-alarmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		579261701B0CDCFC001910D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		579261711B0CDCFC001910D7 /* alstom_alarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = alstom_alarmTests.m; sourceTree = "<group>"; };
-		5792617B1B0D3FFB001910D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		579261811B0D43FC001910D7 /* DataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFetcher.h; sourceTree = "<group>"; };
 		579261821B0D43FC001910D7 /* DataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFetcher.m; sourceTree = "<group>"; };
 		579261841B0D443B001910D7 /* Train.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Train.h; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 		579261511B0CDCFC001910D7 /* alstom-alarm */ = {
 			isa = PBXGroup;
 			children = (
+				57706ACC1BB0B6C700108BC2 /* Images.xcassets */,
 				5792617D1B0D43B7001910D7 /* Utils */,
 				579261561B0CDCFC001910D7 /* AppDelegate.h */,
 				579261571B0CDCFC001910D7 /* AppDelegate.m */,
@@ -140,7 +141,6 @@
 				5792618E1B0E795A001910D7 /* AlarmTableViewController.m */,
 				5792615F1B0CDCFC001910D7 /* Main.storyboard */,
 				579261641B0CDCFC001910D7 /* LaunchScreen.xib */,
-				5792617B1B0D3FFB001910D7 /* Images.xcassets */,
 				579261521B0CDCFC001910D7 /* Supporting Files */,
 			);
 			path = "alstom-alarm";
@@ -242,11 +242,12 @@
 		579261471B0CDCFC001910D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = j2s;
 				TargetAttributes = {
 					5792614E1B0CDCFC001910D7 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7MVCCV2DL2;
 					};
 					5792616A1B0CDCFC001910D7 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -278,7 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5792617C1B0D3FFB001910D7 /* Images.xcassets in Resources */,
+				57706ACD1BB0B6C700108BC2 /* Images.xcassets in Resources */,
 				579261611B0CDCFC001910D7 /* Main.storyboard in Resources */,
 				579261661B0CDCFC001910D7 /* LaunchScreen.xib in Resources */,
 			);
@@ -376,6 +377,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -391,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -429,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -441,10 +443,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "alstom-alarm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "alstom.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -452,10 +458,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "alstom-alarm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "alstom.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -473,6 +483,7 @@
 				);
 				INFOPLIST_FILE = "alstom-alarmTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "alstom.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alstom-alarm.app/alstom-alarm";
 			};
@@ -488,6 +499,7 @@
 				);
 				INFOPLIST_FILE = "alstom-alarmTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "alstom.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alstom-alarm.app/alstom-alarm";
 			};

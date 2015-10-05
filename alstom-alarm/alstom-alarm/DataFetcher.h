@@ -29,7 +29,8 @@ FOUNDATION_EXPORT NSString *const HOST_URL;
 
 - (BOOL) setAlarmResolved:(NSString *)alarmId;
 
-- (UIImage *)fetchMap;
+- (UIImage *) getMainMap;
+- (UIImage *) getMediaWithUrl:(NSString *)url;
 
 @end
 

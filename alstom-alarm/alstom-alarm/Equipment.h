@@ -7,27 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGGeometry.h>
 #import "Entity.h"
 
 @interface Equipment : NSObject <Entity>
 
 @property (nonatomic, strong) NSString *mId;
+@property (nonatomic, strong) NSString *mName;
 @property (nonatomic, strong) NSMutableArray *mAlarms;
 @property (nonatomic, strong) NSString *mType;
-// X, Y between 0, 1 and 0.0 0.0 is the top left corner.
-@property float mX;
-@property float mY;
-// in percentage of the width of the map.
-@property float mRadius;
+@property (nonatomic, strong) NSString *mVisual;
+@property (nonatomic, strong) NSValue *mShape;
 
-- (Equipment *) initWithRandom;
 - (Equipment *) initWithType:(NSString *)type
+                        Name:(NSString *)name
                           Id:(NSString *)ID
-                           X:(float)x
-                           Y:(float)y
-                      radius:(float)radius
-                      alarms:(NSMutableArray *)alarms;
-
+                       Shape:(NSValue *)shape
+                      Visual:(NSString *)visual
+                      Alarms:(NSMutableArray *)alarms;
 - (NSString *) getMaxLevel;
 
 @end

@@ -10,8 +10,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "metro-paris.png"
+      "filename" : "metro-paris.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

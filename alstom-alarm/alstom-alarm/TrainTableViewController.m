@@ -90,11 +90,11 @@
                 
                 NSString *max_level = [equipment getMaxLevel];
                 if (max_level != nil) {
-                    if ([max_level  isEqual: @"CRITICAL"]) {
+                    if ([max_level  isEqual: @"ERROR"]) {
                         [cell setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2f]];
-                    } else if ([max_level  isEqual: @"ERROR"]) {
-                        [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
                     } else if ([max_level  isEqual: @"WARNING"]) {
+                        [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
+                    } else if ([max_level  isEqual: @"INFO"]) {
                         [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
                     }
                 } else {
@@ -109,11 +109,11 @@
                 
                 NSString *max_level = [train getMaxLevel];
                 if (max_level != nil) {
-                    if ([max_level  isEqual: @"CRITICAL"]) {
+                    if ([max_level  isEqual: @"ERROR"]) {
                         [cell setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2f]];
-                    } else if ([max_level  isEqual: @"ERROR"]) {
-                        [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
                     } else if ([max_level  isEqual: @"WARNING"]) {
+                        [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
+                    } else if ([max_level  isEqual: @"INFO"]) {
                         [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
                     }
                 } else if ([train.mStatus isEqual: @"ON_RAILS"]) {

@@ -8,6 +8,7 @@
 
 #import "Alarm.h"
 #import "DataFetcher.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @implementation Alarm
 
@@ -18,7 +19,7 @@
     if (ALARM_LEVELS == nil)
     {
         // Increasing order
-        ALARM_LEVELS = [[NSArray alloc] initWithObjects:@"WARNING", @"ERROR", @"CRITICAL", nil];
+        ALARM_LEVELS = [[NSArray alloc] initWithObjects:@"INFO", @"WARNING", @"ERROR", nil];
     }
     
     return ALARM_LEVELS;
@@ -28,30 +29,17 @@
                       Id:(NSString *)ID
                    Level:(NSString *)level
                     desc:(NSString *)desc
-                location:(NSString *)location
-                  parent:(NSString *)parent
                   status:(NSString *)status
+                   shape:(NSValue *)shape
+               equipment:(NSString *)mEquipmentId
 {
-    self.mParentId = parent;
+    self.mShape = shape;
     self.mId = ID;
     self.mAlarmCode = code;
     self.mLevel = level;
     self.mDescription = desc;
-    self.mLocation = location;
+    self.mEquipmentId = mEquipmentId;
     
-    return self;
-}
-
-- (Alarm *) initWithRandomForParent:(NSString *) parentId
-{
-    self.mParentId = parentId;
-    NSArray * alarmCodes = [NSArray arrayWithObjects:@"200", @"500", @"204", @"304", @"105", nil];
-    self.mAlarmCode = [alarmCodes objectAtIndex:arc4random() % [alarmCodes count]];
-    NSArray * ids = [NSArray arrayWithObjects:@"T1231", @"T1234", @"T2024", @"E3204", @"E0105", nil];
-    self.mId = [ids objectAtIndex:arc4random() % [ids count]];
-    NSArray * levels = [NSArray arrayWithObjects:@"CRITICAL", @"ERROR", @"WARNING", nil];
-    self.mLevel = [levels objectAtIndex:arc4random() % [levels count]];
-    self.mDescription = @"No big deal";
     return self;
 }
 
@@ -85,6 +73,16 @@
     } else {
         return NSOrderedDescending;
     }
+}
+
+- (UIColor *) AlarmColor
+{
+    if ([self.mAlarmCode isEqualToString:@"2"]) {
+        return [UIColor yellowColor];
+    } else if ([self.mAlarmCode isEqualToString:@"3"]) {
+        return [UIColor redColor];
+    }
+    return [UIColor clearColor];
 }
 
 @end

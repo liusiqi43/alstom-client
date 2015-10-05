@@ -53,23 +53,24 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(buttonIndex==0)
+    if(buttonIndex == 0)
     {
         Alarm *alarm = [self.mAlarms objectAtIndex:[alertView tag]];
         if ([alarm pushResolved]) {
+            [self.mParentVC resolveAlarm:alarm.mId];
             self.mAlarms = [[self.mAlarms sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
             [self.tableView reloadData];
-            [self.view makeToast:@"Aquittement enregistré."];
+            [self.view makeToast:@"Resolution registered."];
         }
     }
 }
 
 - (void) pushResolved:(UIButton *)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Aquittement d'alarme"
-                                                    message:@"Êtes-vous sûr d'acquiter cette alarme?"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirmation"
+                                                    message:@"Do you confirm to resolve this alarm?"
                                                    delegate:self
-                                          cancelButtonTitle:@"Oui"
-                                          otherButtonTitles:@"Annuler", nil];
+                                          cancelButtonTitle:@"Yes"
+                                          otherButtonTitles:@"Cancel", nil];
     NSNumber *number = [((AttributedUIButton *) sender).attrs objectForKey:@"cellindex"];
     [alert setTag:[number integerValue]];
     [alert show];
@@ -89,25 +90,17 @@
             UILabel *field_code = (UILabel *) [cell viewWithTag:1];
             UILabel *field_level = (UILabel *) [cell viewWithTag:2];
             UILabel *field_desc = (UILabel *) [cell viewWithTag:3];
-            UILabel *field_location = (UILabel *) [cell viewWithTag:4];
             AttributedUIButton *resolveButton = (AttributedUIButton *) [cell viewWithTag:5];
             
             [field_code setText:alarm.mAlarmCode];
             [field_level setText:alarm.mLevel];
             [field_desc setText:alarm.mDescription];
-            [field_location setText:alarm.mLocation];
             
             [resolveButton.attrs setValue:[NSNumber numberWithUnsignedLong:indexPath.row-1] forKey:@"cellindex"];
             [resolveButton addTarget:self action:@selector(pushResolved:) forControlEvents:UIControlEventTouchUpInside];
             resolveButton.hidden = NO;
-            if ([alarm.mLevel isEqualToString: @"CRITICAL"]) {
-                [cell setBackgroundColor:[[UIColor redColor] colorWithAlphaComponent:0.2f]];
-            } else if ([alarm.mLevel isEqualToString: @"ERROR"]) {
-                [cell setBackgroundColor:[[UIColor yellowColor] colorWithAlphaComponent:0.2f]];
-            } else if ([alarm.mLevel isEqualToString: @"WARNING"]) {
-                [cell setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.2f]];
-            }
-
+            [cell setBackgroundColor:[[alarm AlarmColor] colorWithAlphaComponent:0.2f]];
+            
             if ([alarm.mStatus isEqualToString:@"RESOLVED"]) {
                 [cell setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.2f]];
                 resolveButton.hidden = YES;

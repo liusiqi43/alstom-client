@@ -16,8 +16,8 @@
 @property (nonatomic, strong) NSString *mId;
 @property (nonatomic, strong) NSString *mStatus;
 @property (nonatomic, strong) NSMutableArray  *mAlarms;
+@property (nonatomic, strong) NSMutableDictionary  *mEquipments;
 
-- (Train *) initWithRandom;
 - (Train *) initWithDirection:(NSString *)direction
                       Station:(NSString *)station
                            Id:(NSString *)tid
