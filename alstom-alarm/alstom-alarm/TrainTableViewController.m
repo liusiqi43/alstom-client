@@ -118,10 +118,9 @@
                     }
                 } else if ([train.mStatus isEqual: @"ON_RAILS"]) {
                     [cell setBackgroundColor:[[UIColor greenColor] colorWithAlphaComponent:0.2f]];
-                } else if ([train.mStatus isEqual: @"OUT_OF_SERVICE"]) {
+                }
+                if ([train.mStatus isEqual: @"OUT_OF_SERVICE"]) {
                     [cell setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.2f]];
-                } else {
-                    [cell setBackgroundColor:[UIColor whiteColor]];
                 }
             }
             break;

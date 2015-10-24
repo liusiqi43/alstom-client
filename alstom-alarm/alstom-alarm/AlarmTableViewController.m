@@ -48,7 +48,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.mAlarms count]+1;
+    return [self.mAlarms count];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -79,33 +79,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
-    switch (indexPath.row) {
-        case 0:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"header" forIndexPath:indexPath];
-            break;
-        default:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"alarm_row" forIndexPath:indexPath];
-            
-            Alarm *alarm = [self.mAlarms objectAtIndex:indexPath.row - 1];
-            UILabel *field_code = (UILabel *) [cell viewWithTag:1];
-            UILabel *field_level = (UILabel *) [cell viewWithTag:2];
-            UILabel *field_desc = (UILabel *) [cell viewWithTag:3];
-            AttributedUIButton *resolveButton = (AttributedUIButton *) [cell viewWithTag:5];
-            
-            [field_code setText:alarm.mAlarmCode];
-            [field_level setText:alarm.mLevel];
-            [field_desc setText:alarm.mDescription];
-            
-            [resolveButton.attrs setValue:[NSNumber numberWithUnsignedLong:indexPath.row-1] forKey:@"cellindex"];
-            [resolveButton addTarget:self action:@selector(pushResolved:) forControlEvents:UIControlEventTouchUpInside];
-            resolveButton.hidden = NO;
-            [cell setBackgroundColor:[[alarm AlarmColor] colorWithAlphaComponent:0.2f]];
-            
-            if ([alarm.mStatus isEqualToString:@"RESOLVED"]) {
-                [cell setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.2f]];
-                resolveButton.hidden = YES;
-            }
-            break;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"alarm_row" forIndexPath:indexPath];
+    
+    Alarm *alarm = [self.mAlarms objectAtIndex:indexPath.row];
+    UILabel *field = (UILabel *) [cell viewWithTag:1];
+    AttributedUIButton *resolveButton = (AttributedUIButton *) [cell viewWithTag:5];
+    
+    
+    [field setText:[[NSArray arrayWithObjects:alarm.mLevel, @": ", alarm.mDescription, @" @", alarm.mEquipmentId, nil] componentsJoinedByString:@""]];
+    
+    [resolveButton.attrs setValue:[NSNumber numberWithUnsignedLong:indexPath.row] forKey:@"cellindex"];
+    [resolveButton addTarget:self action:@selector(pushResolved:) forControlEvents:UIControlEventTouchUpInside];
+    resolveButton.hidden = NO;
+    [cell setBackgroundColor:[[alarm AlarmColor] colorWithAlphaComponent:0.2f]];
+    
+    if ([alarm.mStatus isEqualToString:@"RESOLVED"]) {
+        [cell setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.2f]];
+        resolveButton.hidden = YES;
     }
     
     return cell;

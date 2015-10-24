@@ -29,6 +29,12 @@
 
 - (NSComparisonResult) compareAlarmLevelWithOther: (Train *) other
 {
+    if ([self.mStatus isEqualToString:@"OUT_OF_SERVICE"] && [other.mStatus isEqualToString:@"ON_RAILS"]) {
+        return NSOrderedDescending;
+    } else if ([self.mStatus isEqualToString:@"ON_RAILS"] && [other.mStatus isEqualToString:@"OUT_OF_SERVICE"]) {
+        return NSOrderedAscending;
+    }
+    
     int self_max_level = -1;
     int other_max_level = -1;
     
@@ -70,7 +76,7 @@
 
 - (NSString *)getTitle
 {
-    return [NSString stringWithFormat:@"Train #%@", self.mId];
+    return [NSString stringWithFormat:@"Train : %@", self.mId];
 }
 
 - (NSString *)getDesc1
