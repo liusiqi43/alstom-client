@@ -13,40 +13,20 @@
 
 @implementation Equipment
 
-- (Equipment *) initWithRandom
-{
-    self = [self init];
-    NSArray * types = [NSArray arrayWithObjects:@"Station", @"Aiguillage", nil];
-    self.mType = [types objectAtIndex:arc4random() % [types count]];
-    NSArray * tids = [NSArray arrayWithObjects:@"74HX12", @"73212", @"7@3HX12", @"44HX12", @"14HX12", @"74H212", @"14HX12", @"14HX12", nil];
-    self.mId = [tids objectAtIndex:arc4random() % [tids count]];
-    self.mX = ((double)arc4random() / ARC4RANDOM_MAX);
-    self.mY = ((double)arc4random() / ARC4RANDOM_MAX);
-    self.mRadius = 0.01;
-    
-    self.mAlarms = [[NSMutableArray alloc] init];
-    NSInteger alarmCount = arc4random() % 3;
-    for (int i=0; i<alarmCount; ++i) {
-        [self.mAlarms addObject:[[Alarm alloc] initWithRandomForParent:self.mId]];
-    }
-    
-    return self;
-}
-
 - (Equipment *) initWithType:(NSString *)type
+                        Name:(NSString *)name
                           Id:(NSString *)ID
-                           X:(float)x
-                           Y:(float)y
-                      radius:(float)radius
-                      alarms:(NSMutableArray *)alarms
+                       Shape:(NSValue *)shape
+                      Visual:(NSString *)visual
+                      Alarms:(NSMutableArray *)alarms;
 {
     self = [self init];
     self.mType = type;
     self.mId = ID;
-    self.mX = x;
-    self.mY = y;
-    self.mRadius = radius;
+    self.mName = name;
+    self.mShape = shape;
     self.mAlarms = alarms;
+    self.mVisual = visual;
     return self;
 }
 
@@ -62,12 +42,12 @@
 
 - (NSString *)getDesc2
 {
-    return [NSString stringWithFormat:@""];
+    return [NSString stringWithFormat:@"%@", self.mName];
 }
 
 - (NSString *)getDesc3
 {
-    return @"";
+    return [NSString stringWithFormat:@"%@", self.mName];
 }
 
 - (NSArray *)getAlarms
@@ -91,6 +71,12 @@
     }
     
     return self_max_level > -1 ? [[Alarm ALARM_LEVELS] objectAtIndex:self_max_level] : nil;
+}
+
+
+- (NSString *)getVisualUrl
+{
+    return _mVisual;
 }
 
 @end

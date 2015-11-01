@@ -34,10 +34,17 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"entity_desc"]) {
-        [(EntityDescViewController *)[segue destinationViewController] setMParentVC:self];
+        self.descVC = (EntityDescViewController *)[segue destinationViewController];
+        [self.descVC setMParentVC:self];
     } else if ([[segue identifier] isEqualToString:@"alarm_table"]) {
-        [(AlarmTableViewController *)[segue destinationViewController] setMParentVC:self];
+        self.alarmVC = (AlarmTableViewController *)[segue destinationViewController];
+        [self.alarmVC setMParentVC:self];
     }
+}
+
+- (void) resolveAlarm:(NSString *)id
+{
+    [self.descVC resolveAlarm:id];
 }
 
 

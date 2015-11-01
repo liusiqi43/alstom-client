@@ -11,13 +11,12 @@
 #import "NYOBetterZoomUIScrollView.h"
 
 @interface EquipmentViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *test;
 
 @property (weak, nonatomic) IBOutlet NYOBetterZoomUIScrollView *scrollView;
 
--(UIView *)addEquipmentToMapAtX:(float)x
-                          Y:(float)y
-                     radius:(float)r
-               forEquipment:(Equipment *)equipment;
+-(UIView *)addEquipmentToMapAsShape:(CGRect)shape
+                       forEquipment:(Equipment *)equipment;
 
 @end
 

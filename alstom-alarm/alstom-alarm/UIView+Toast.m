@@ -42,7 +42,7 @@ static const CGFloat CSToastImageViewHeight     = 80.0;
 
 // activity
 static const CGFloat CSToastActivityWidth       = 100.0;
-static const CGFloat CSToastActivityHeight      = 100.0;
+static const CGFloat CSToastActivityHeight      = 10.0;
 static const NSString * CSToastActivityDefaultPosition = @"center";
 
 // interaction
@@ -71,6 +71,15 @@ NSString * const CSToastPositionBottom          = @"bottom";
 
 
 @implementation UIView (Toast)
+
+- (NSMutableDictionary*) getDictionary
+{
+    if (objc_getAssociatedObject(self, @"dictionary")==nil)
+    {
+        objc_setAssociatedObject(self,@"dictionary",[[NSMutableDictionary alloc] init],OBJC_ASSOCIATION_RETAIN);
+    }
+    return (NSMutableDictionary *)objc_getAssociatedObject(self, @"dictionary");
+}
 
 #pragma mark - Toast Methods
 
@@ -238,7 +247,7 @@ NSString * const CSToastPositionBottom          = @"bottom";
     }
     
     // default to bottom
-    return CGPointMake(self.bounds.size.width/2, (self.bounds.size.height - (toast.frame.size.height / 2)) - CSToastVerticalPadding);
+    return CGPointMake(self.bounds.size.width/2, (self.bounds.size.height - (toast.frame.size.height / 2)) - CSToastVerticalPadding - 100);
 }
 
 - (CGSize)sizeForString:(NSString *)string font:(UIFont *)font constrainedToSize:(CGSize)constrainedSize lineBreakMode:(NSLineBreakMode)lineBreakMode {
@@ -375,7 +384,7 @@ NSString * const CSToastPositionBottom          = @"bottom";
     if(imageView != nil) {
         [wrapperView addSubview:imageView];
     }
-        
+    
     return wrapperView;
 }
 

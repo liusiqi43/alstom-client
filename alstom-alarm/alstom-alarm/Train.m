@@ -12,25 +12,6 @@
 
 @implementation Train
 
-- (Train *) initWithRandom
-{
-    self = [self init];
-    NSArray * directions = [NSArray arrayWithObjects:@"OBS", @"TLO", @"APS", @"SUP", @"GAB", @"SIQ", @"GOO", @"J2S", nil];
-    self.mDirection = [directions objectAtIndex:arc4random() % [directions count]];
-    NSArray * tids = [NSArray arrayWithObjects:@"74HX12", @"74HX12", @"74HX12", @"74HX12", @"74HX12", @"74HX12", @"74HX12", @"74HX12", nil];
-    self.mId = [tids objectAtIndex:arc4random() % [tids count]];
-    NSArray * stations = [NSArray arrayWithObjects:@"BOS", @"TOL", @"ARS", @"SAP", @"SAB", @"SQW", @"MOO", @"ALS", nil];
-    self.mStation = [stations objectAtIndex:arc4random() % [stations count]];
-    self.mStatus = @"";
-    self.mAlarms = [[NSMutableArray alloc] init];
-    NSInteger alarmCount = arc4random() % 3;
-    for (int i=0; i<alarmCount; ++i) {
-        [self.mAlarms addObject:[[Alarm alloc] initWithRandomForParent:self.mId]];
-    }
-    
-    return self;
-}
-
 - (Train *) initWithDirection:(NSString *)direction
                       Station:(NSString *)station
                            Id:(NSString *)tid
@@ -48,6 +29,12 @@
 
 - (NSComparisonResult) compareAlarmLevelWithOther: (Train *) other
 {
+    if ([self.mStatus isEqualToString:@"OUT_OF_SERVICE"] && [other.mStatus isEqualToString:@"ON_RAILS"]) {
+        return NSOrderedDescending;
+    } else if ([self.mStatus isEqualToString:@"ON_RAILS"] && [other.mStatus isEqualToString:@"OUT_OF_SERVICE"]) {
+        return NSOrderedAscending;
+    }
+    
     int self_max_level = -1;
     int other_max_level = -1;
     
@@ -89,7 +76,7 @@
 
 - (NSString *)getTitle
 {
-    return [NSString stringWithFormat:@"Train #%@", self.mId];
+    return [NSString stringWithFormat:@"Train : %@", self.mId];
 }
 
 - (NSString *)getDesc1
@@ -115,6 +102,11 @@
 - (NSString *)getType
 {
     return @"Train";
+}
+
+- (NSString *)getVisualUrl
+{
+    return @"/media/train.png";
 }
 
 @end

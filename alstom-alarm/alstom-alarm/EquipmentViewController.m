@@ -36,7 +36,7 @@
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-//    NSLog(@"zoomScale = %f", scrollView.zoomScale);
+    //    NSLog(@"zoomScale = %f", scrollView.zoomScale);
 }
 
 
@@ -51,7 +51,7 @@
     
     if(wasAtMinimumZoom || self.scrollView.zoomScale < self.scrollView.minimumZoomScale) {
         [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
-    }	
+    }
 }
 
 - (void)scrollViewSetup {
@@ -62,7 +62,7 @@
     [self.scrollView setBouncesZoom:NO];
     [self.scrollView setDelegate:self];
     
-    UIImage *image = [UIImage imageNamed:@"metro"];
+    UIImage *image = [[DataFetcher sharedInstance] getMainMap];
     self.scrollView.childView = [[UIImageView alloc] initWithImage:image];
     [self.scrollView.childView setUserInteractionEnabled:YES];
     // Finish the ScrollView setup
@@ -80,7 +80,7 @@
 
 - (UIView *)addEquipmentToMap:(Equipment *)equipment
 {
-    return [self addEquipmentToMapAtX:equipment.mX Y:equipment.mY radius:equipment.mRadius forEquipment:equipment];
+    return [self addEquipmentToMapAsShape:[equipment.mShape CGRectValue] forEquipment:equipment];
 }
 
 - (void)viewDidLoad {
@@ -92,18 +92,13 @@
     self.mEquipements = [NSMutableDictionary dictionary];
     self.mBubbles = [NSMutableArray array];
     
-    // Load map image from server
-    [((UIImageView *) self.scrollView.childView) setImage:[[DataFetcher sharedInstance] fetchMap]];
-    
     [self scrollViewSetup];
-    
     NSArray *equipments = [[DataFetcher sharedInstance] fetchEquipments];
     for (Equipment *equipment in equipments) {
         if ([self.mEquipements objectForKey:equipment.mId] != nil)
             continue;
         [self.mEquipements setObject: equipment forKey:equipment.mId];
         UIView *circleView = [self addEquipmentToMap:equipment];
-        
         UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                           action:@selector(onTap:)];
         [circleView addGestureRecognizer:singleFingerTap];
@@ -112,10 +107,12 @@
         if (level == nil) {
             [circleView stopBlinking];
         } else {
-            if ([[equipment getMaxLevel] isEqualToString:@"CRITICAL"]) {
-                [circleView startBlinkingWithColor:[UIColor redColor]];
-            } else if ([[equipment getMaxLevel] isEqualToString:@"ERROR"]) {
-                [circleView startBlinkingWithColor:[UIColor yellowColor]];
+            if ([[equipment getMaxLevel] isEqualToString:@"ERROR"]) {
+                [circleView startBlinkingWithColor:[[UIColor redColor] colorWithAlphaComponent:0.4f]
+                                           default:[UIColor clearColor]];
+            } else if ([[equipment getMaxLevel] isEqualToString:@"WARNING"]) {
+                [circleView startBlinkingWithColor:[[UIColor yellowColor] colorWithAlphaComponent:0.4f]
+                                           default:[UIColor clearColor]];
             }
         }
     }
@@ -125,7 +122,8 @@
 {
     if (sender.state == UIGestureRecognizerStateEnded && sender.view.stringTag != nil)
     {
-        [self performSegueWithIdentifier:@"show_details" sender:[self.mEquipements objectForKey:sender.view.stringTag]];
+        Equipment* e = [self.mEquipements objectForKey:sender.view.stringTag];
+        [self performSegueWithIdentifier:@"equipmentView" sender:e];
     }
 }
 
@@ -139,30 +137,21 @@
     return [self.scrollView childView];
 }
 
--(UIView *)addEquipmentToMapAtX:(float)x
-                       Y:(float)y
-                  radius:(float)r
-               forEquipment:(Equipment *)equipment
+-(UIView *)addEquipmentToMapAsShape:(CGRect)shape
+                       forEquipment:(Equipment *)equipment
 {
-    x *= ((UIImageView *) self.scrollView.childView).image.size.width;
-    y *= ((UIImageView *) self.scrollView.childView).image.size.height;
-    r *= ((UIImageView *) self.scrollView.childView).image.size.width;
+    UIView *equipmentView = [[UIView alloc] initWithFrame:shape];
     
-    UIView *circleView = [[UIView alloc] initWithFrame:CGRectMake(x-r, y-r, 2*r, 2*r)];
-    circleView.alpha = 0.5;
-    circleView.layer.cornerRadius = r;
-    circleView.backgroundColor = [UIColor blueColor];
-    
-    [circleView setStringTag:equipment.mId];
-    [self.scrollView.childView addSubview:circleView];
-    [self.mBubbles addObject:circleView];
-    return circleView;
+    [equipmentView setStringTag:equipment.mId];
+    [self.scrollView.childView addSubview:equipmentView];
+    [self.mBubbles addObject:equipmentView];
+    return equipmentView;
 }
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"show_details"]) {
+    if ([[segue identifier] isEqualToString:@"equipmentView"]) {
         Equipment *equipment = (Equipment *) sender;
         NSLog(@"Equipement: %@", equipment.mId);
         EntityContainerViewController * vc = (EntityContainerViewController *)[segue destinationViewController];
