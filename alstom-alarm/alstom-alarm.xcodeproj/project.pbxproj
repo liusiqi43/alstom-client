@@ -11,7 +11,6 @@
 		5707F7A91B4575D5001E57F8 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5707F7A81B4575D5001E57F8 /* UIView+Toast.m */; };
 		5725160B1B61EA740064D41A /* AttributedUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5725160A1B61EA740064D41A /* AttributedUIButton.m */; };
 		575C36751B28AFFF00665899 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 575C36741B28AFFF00665899 /* NSData+Base64.m */; };
-		57706ACD1BB0B6C700108BC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57706ACC1BB0B6C700108BC2 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		579261551B0CDCFC001910D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261541B0CDCFC001910D7 /* main.m */; };
 		579261581B0CDCFC001910D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579261571B0CDCFC001910D7 /* AppDelegate.m */; };
 		579261611B0CDCFC001910D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5792615F1B0CDCFC001910D7 /* Main.storyboard */; };
@@ -48,7 +47,6 @@
 		5725160A1B61EA740064D41A /* AttributedUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedUIButton.m; sourceTree = "<group>"; };
 		575C36731B28AFFF00665899 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		575C36741B28AFFF00665899 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		57706ACC1BB0B6C700108BC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5792614F1B0CDCFC001910D7 /* alstom-alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alstom-alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		579261531B0CDCFC001910D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		579261541B0CDCFC001910D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 		579261511B0CDCFC001910D7 /* alstom-alarm */ = {
 			isa = PBXGroup;
 			children = (
-				57706ACC1BB0B6C700108BC2 /* Images.xcassets */,
 				5792617D1B0D43B7001910D7 /* Utils */,
 				579261561B0CDCFC001910D7 /* AppDelegate.h */,
 				579261571B0CDCFC001910D7 /* AppDelegate.m */,
@@ -279,7 +276,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57706ACD1BB0B6C700108BC2 /* Images.xcassets in Resources */,
 				579261611B0CDCFC001910D7 /* Main.storyboard in Resources */,
 				579261661B0CDCFC001910D7 /* LaunchScreen.xib in Resources */,
 			);
