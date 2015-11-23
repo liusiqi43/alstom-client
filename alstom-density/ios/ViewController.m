@@ -18,6 +18,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *background;
+@property (weak, nonatomic) IBOutlet UIImageView *bg_image;
 
 // Fields
 @property (strong, nonatomic) StationsNameIdDataSource * namesDataSource;
@@ -70,7 +71,7 @@
     tapOutSideRecognizer.numberOfTapsRequired = 1;
     tapOutSideRecognizer.enabled = YES;
     tapOutSideRecognizer.cancelsTouchesInView = NO;
-    [_background addGestureRecognizer:tapOutSideRecognizer];
+    [_bg_image addGestureRecognizer:tapOutSideRecognizer];
 }
 
 - (void)hideKeyboard:(UITapGestureRecognizer *) gesture {
