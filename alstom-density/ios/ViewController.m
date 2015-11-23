@@ -39,8 +39,8 @@
     [self.navigationController setNavigationBarHidden:YES];
     self.namesDataSource = [[StationsNameIdDataSource alloc] init];
     self.geoDataSource = [[GeoStationsIdsDataSource alloc] init];
-    [self.textfield_arrival setAutoCompleteDataSource: self.namesDataSource];
-    [self.textfield_departure setAutoCompleteDataSource: self.namesDataSource];
+    [self.textfield_arrival setAutoCompleteDataSource: self.geoDataSource];
+    [self.textfield_departure setAutoCompleteDataSource: self.geoDataSource];
     self.background.backgroundColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.50];
     
     [self registerForKeyboardNotifications];
@@ -138,8 +138,11 @@
 
 - (void)setNameDataSource:(id)sender
 {
-    NSLog(@"Set source to NameDataSource");
-    [self.textfield_departure setAutoCompleteDataSource:self.namesDataSource];
+    NSLog(@"Set source to NameDataSource if denied");
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+        [self.textfield_departure setAutoCompleteDataSource:self.namesDataSource];
+        [self.textfield_arrival setAutoCompleteDataSource:self.namesDataSource];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

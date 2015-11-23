@@ -12,7 +12,7 @@
 
 @implementation DataFetcher
 
-NSString *const HOST_URL = @"http://169.254.91.226:3000/";
+NSString *const HOST_URL = @"http://127.0.0.1:3000/";
 
 +(instancetype) sharedInstance {
     static dispatch_once_t pred;
