@@ -64,6 +64,18 @@
     [self.textfield_departure addTarget:self action:@selector(setNameDataSource:) forControlEvents:UIControlEventEditingChanged];
     
     [self initGeo];
+    
+    UITapGestureRecognizer *tapOutSideRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                           action:@selector(hideKeyboard:)];
+    tapOutSideRecognizer.numberOfTapsRequired = 1;
+    tapOutSideRecognizer.enabled = YES;
+    tapOutSideRecognizer.cancelsTouchesInView = NO;
+    [_background addGestureRecognizer:tapOutSideRecognizer];
+}
+
+- (void)hideKeyboard:(UITapGestureRecognizer *) gesture {
+    [self.textfield_arrival resignFirstResponder];
+    [self.textfield_departure resignFirstResponder];
 }
 
 // Call this method somewhere in your view controller setup code.
