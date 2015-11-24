@@ -10,6 +10,6 @@
 
 @interface AttributedUIButton : UIButton
 
-@property (nonatomic, strong) NSDictionary* attrs;
+@property int index;
 
 @end

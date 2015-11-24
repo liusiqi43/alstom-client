@@ -71,8 +71,7 @@
                                                    delegate:self
                                           cancelButtonTitle:@"Yes"
                                           otherButtonTitles:@"Cancel", nil];
-    NSNumber *number = [((AttributedUIButton *) sender).attrs objectForKey:@"cellindex"];
-    [alert setTag:[number integerValue]];
+    [alert setTag:((AttributedUIButton *) sender).index];
     [alert show];
 }
 
@@ -87,8 +86,8 @@
     
     
     [field setText:[[NSArray arrayWithObjects:alarm.mLevel, @": ", alarm.mDescription, @" @", alarm.mEquipmentId, nil] componentsJoinedByString:@""]];
-    
-    [resolveButton.attrs setValue:[NSNumber numberWithUnsignedLong:indexPath.row] forKey:@"cellindex"];
+
+    resolveButton.index = indexPath.row;
     [resolveButton addTarget:self action:@selector(pushResolved:) forControlEvents:UIControlEventTouchUpInside];
     resolveButton.hidden = NO;
     [cell setBackgroundColor:[[alarm AlarmColor] colorWithAlphaComponent:0.2f]];
