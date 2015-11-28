@@ -1,11 +1,3 @@
-//
-//  MLPCustomAutoCompleteCell.m
-//  MLPAutoCompleteDemo
-//
-//  Created by Eddy Borja on 2/5/13.
-//  Copyright (c) 2013 Mainloop. All rights reserved.
-//
-
 #import "AutoCompleteCell.h"
 #import <QuartzCore/QuartzCore.h>
 

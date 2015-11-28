@@ -1,11 +1,3 @@
-//
-//  TrainsViewController.m
-//  ios
-//
-//  Created by Siqi Liu on 12/23/14.
-//  Copyright (c) 2014 Alstom. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "TrainsViewController.h"
 #import "UICollectionedTableViewCell.h"
