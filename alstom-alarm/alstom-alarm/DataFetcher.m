@@ -1,13 +1,4 @@
-//
-//  DataFetcher.m
-//  ios
-//
-//  Created by Siqi Liu on 12/19/14.
-//  Copyright (c) 2014 Alstom. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-#import "NSData+Base64.h"
 #import "DataFetcher.h"
 #import "Train.h"
 #import "Alarm.h"

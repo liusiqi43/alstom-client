@@ -1,11 +1,3 @@
-//
-//  NYOBetterUIScrollView.m
-//  ZoomTest
-//
-//  Created by Liam on 14/04/2010.
-//  Copyright 2010 Liam Jones (nyoron.co.uk). All rights reserved.
-//
-
 #import "NYOBetterZoomUIScrollView.h"
 
 

@@ -1,11 +1,3 @@
-//
-//  UIView+StringIdentifiedUIView.m
-//  alstom-alarm
-//
-//  Created by Siqi Liu on 5/22/15.
-//  Copyright (c) 2015 j2s. All rights reserved.
-//
-
 #import "UIView+StringIdentifiedUIView.h"
 #import <objc/runtime.h>
 
